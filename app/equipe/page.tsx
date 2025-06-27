@@ -22,99 +22,71 @@ export default function TeamPage() {
   const teamMembers = [
     {
       id: 1,
-      name: "Kouadio Amenan", // or appropriate name
-      role: "Fondateur & Host Principal",
-      location: "Abidjan, Côte d'Ivoire",
-      bio: "Fondateur et animateur principal de TechBlockchainAfr, expert blockchain avec 8 ans d'expérience dans l'écosystème crypto. Ancien développeur senior dans plusieurs projets DeFi majeurs, il a lancé LTBAF pour démocratiser l'accès à l'information blockchain en Afrique francophone.",
-      expertise: ["Blockchain Development", "DeFi Protocols", "Smart Contracts", "Ethereum", "Podcast Hosting"],
+      name: "Ayémou Essouba Loïc-Yvan",
+      role: "Founder & CEO",
+      location: "Abidjan, Côte D'Ivoire",
+      bio: "Après ses études à PIGIER-Côte D'Ivoire, Ayémou décroche une Licence en Communication & Développement des Marques. Passionné par la Tech, il rejoint BINANCE au poste de Community Manager, puis Operations Manager pour le département Afrique Francophone. Au cours de l'année 2023, Ayémou décroche une nouvelle position chez IZICHANGE en tant que Directeur Pays pour la filiale de Côte d'Ivoire et développe ses actions autour du B2B. Aujourd'hui Ayémou porte le titre de Blockchain Project Manager et contribue à l'éclosion de projets Blockchain en Afrique Francophone.",
+      expertise: ["Blockchain Development", "DeFi Protocols", "Smart Contracts", "Stellar", "Rust"],
       achievements: [
-        "Fondateur de TechBlockchainAfr (2022)",
-        "Host de 60+ épisodes podcast blockchain",
-        "Speaker dans 10+ événements blockchain africains",
-        "Mentor de 50+ entrepreneurs blockchain africains",
+        "Country Lead, Stellar Côte D'Ivoire",
+        "Country Manager IZICHANGE, Filiale Côte D'Ivoire",
+        "Operations Manager, BINANCE Afrique Francophone",
+        "Community Manager, BINANCE Afrique Francophone",
       ],
-      experience: "8+ années",
-      projects: "60+ épisodes podcast produits",
-      image: "/images/founder-photo.jpg",
+      experience: "7+ années",
+      projects: "Tech. Blockchain Afr + Abokyh (Gift Cards Solutions)",
+      image: "/images/frame-ayemou.png",
       social: {
-        twitter: "https://x.com/tech_blockaf",
-        linkedin: "https://linkedin.com/company/techblockchainaf",
-        email: "contact@techblockchainafr.com",
+        twitter: "https://x.com/AyemouLoic",
+        linkedin: "https://www.linkedin.com/in/loic-yvan-ayémou225",
+        email: "ayemouyvan@gmail.com",
       },
-      languages: ["Français", "Anglais", "Baoulé"],
-      education: "Master en Informatique - École Supérieure d'Informatique",
+      education: "Licence en Communication & Développement des Marques – PIGIER CÔTE D'IVOIRE",
     },
     {
       id: 2,
-      name: "Omar Benali",
-      role: "Co-Host & Analyste Crypto",
-      location: "Casablanca, Maroc",
-      bio: "Trader professionnel et analyste crypto depuis 6 ans avec une spécialisation dans les marchés émergents africains. Expert en analyse technique et fondamentale, il a géré des portefeuilles crypto de plus de 10M$ et conseille plusieurs fonds d'investissement spécialisés dans les actifs numériques africains.",
+      name: "Patrick Yeboue",
+      role: "Blockchain & Web3 Project Manager",
+      location: "Abidjan, Côte D'Ivoire",
+      bio: "Patrick Yeboue est un entrepreneur et investisseur passionné par l'univers du Web3, de la blockchain et des crypto-actifs, Blockchain & Web3 Project Manager, Official Binance Angel chez Binance",
       expertise: ["Trading Crypto", "Analyse Technique", "DeFi", "Stablecoins", "Marchés Africains"],
       achievements: [
-        "Gestionnaire de portefeuille crypto 10M$+",
-        "Conseiller pour 5 fonds d'investissement crypto",
-        "Prédictions de marché avec 85% de précision",
-        "Formateur de 200+ traders africains",
+        "Fondateur de plusieurs initiatives de formation et de développement dans la crypto",
+        "Co-founder de Bit Trading Education, un centre de formation",
+        "Auteur avec +10 Ouvrages",
+        "Formateur de 1,000+ étudiants à travers Binance Academy",
       ],
-      experience: "6+ années",
-      projects: "15+ analyses de marché publiées",
-      image: "/placeholder.svg?height=300&width=300",
+      experience: "10+ années",
+      projects: "Bit Trading Edu",
+      image: "/images/frame-patrick.png",
       social: {
-        twitter: "https://twitter.com/omar_crypto_ma",
-        linkedin: "https://linkedin.com/in/omar-benali",
-        youtube: "https://youtube.com/@omarcryptoanalysis",
+        twitter: "https://x.com/Cryptopatyeb",
+        linkedin: "https://www.linkedin.com/in/patrick-yeboue-a434a6120/",
       },
-      languages: ["Français", "Arabe", "Anglais"],
-      education: "Master en Finance - HEC Casablanca",
+      education: "Master en Blockchain & Web3 – Founderz, Barcelone",
     },
     {
       id: 3,
-      name: "Fatou Koné",
-      role: "Responsable Communauté & Marketing",
+      name: "Michel Djè Bi",
+      role: "Digital Marketing Manager",
       location: "Abidjan, Côte d'Ivoire",
-      bio: "Community manager experte avec une passion pour l'éducation technologique et l'inclusion numérique. Elle gère notre communauté de 200+ membres actifs à travers l'Afrique francophone et développe des stratégies d'engagement innovantes. Spécialiste en marketing digital et growth hacking pour les startups tech africaines.",
+      bio: "Digital Marketing Manager avec 14 années d'expérience, j'ai travaillé sur le développement de stratégies digitales de plusieurs marques en Côte d'Ivoire.",
       expertise: ["Community Management", "Marketing Digital", "Growth Hacking", "Social Media", "Content Strategy"],
       achievements: [
-        "Croissance communauté de 0 à 200+ membres en 18 mois",
-        "Taux d'engagement communautaire de 45%",
-        "Campagnes marketing avec ROI de 300%+",
-        "Organisatrice de 10+ événements communautaires",
+        "J'ai travaillé en agence pendant 6 ans (ex-Voodoo Digital – Voodoo Communication): Social Media, Project management, Achat media digital, Google Ads",
+        "J'ai contribué à la croissance de Wave Mobile Money via les canaux digitaux entre 2021 et 2023",
+        "J'ai exploré le web3 en développant des campagnes digitales pour Binance, leader mondial de l'écosystème crypto, sur les marchés d'Afrique Francophone en 2023",
+        "J'ai fondé en 2023 le média d'éducation au web3 – www.lecoinmagique.com",
       ],
-      experience: "4+ années",
-      projects: "30+ campagnes marketing réussies",
-      image: "/placeholder.svg?height=300&width=300",
+      experience: "14+ années",
+      projects: "100+ campagnes marketing réussies",
+      image: "/images/frame-michel.png",
       social: {
-        instagram: "https://instagram.com/fatou_blockchain",
-        linkedin: "https://linkedin.com/in/fatou-kone",
-        email: "fatou@ltbaf.com",
+        facebook: "https://www.facebook.com/mikeylange225",
+        linkedin: "https://www.linkedin.com/in/micheldjebi/",
+        email: "micheldjebi@gmail.com",
       },
-      languages: ["Français", "Anglais", "Baoulé"],
-      education: "Master en Communication - Université Félix Houphouët-Boigny",
-    },
-    {
-      id: 4,
-      name: "Moussa Traoré",
-      role: "Développeur Blockchain & Consultant Technique",
-      location: "Bamako, Mali",
-      bio: "Développeur blockchain full-stack spécialisé dans les solutions Web3 pour l'Afrique. Il a développé plusieurs dApps utilisées par des milliers d'utilisateurs africains et conseille des gouvernements sur l'implémentation de solutions blockchain. Expert en interopérabilité blockchain et solutions de paiement décentralisées.",
-      expertise: ["Web3 Development", "Smart Contracts", "dApps", "Interoperability", "Payment Solutions"],
-      achievements: [
-        "Développeur de 5 dApps avec 10K+ utilisateurs",
-        "Consultant blockchain pour 3 gouvernements africains",
-        "Contributeur open-source avec 1000+ commits",
-        "Formateur technique pour 100+ développeurs",
-      ],
-      experience: "5+ années",
-      projects: "20+ projets blockchain déployés",
-      image: "/placeholder.svg?height=300&width=300",
-      social: {
-        twitter: "https://twitter.com/moussa_web3",
-        linkedin: "https://linkedin.com/in/moussa-traore",
-        email: "moussa@ltbaf.com",
-      },
-      languages: ["Français", "Anglais", "Bambara"],
-      education: "Ingénieur en Informatique - École Supérieure d'Ingénierie de Bamako",
+      education: "Master en Communication – Université Félix Houphouët-Boigny",
     },
   ]
 
@@ -186,22 +158,22 @@ export default function TeamPage() {
               <div className="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <Users className="w-8 h-8 text-orange-500" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900">4+</h3>
+              <h3 className="text-2xl font-bold text-gray-900">3+</h3>
               <p className="text-gray-600">Experts Dédiés</p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <Award className="w-8 h-8 text-green-500" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900">20+</h3>
+              <h3 className="text-2xl font-bold text-gray-900">30+</h3>
               <p className="text-gray-600">Années d'Expérience</p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <MapPin className="w-8 h-8 text-purple-500" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900">4</h3>
-              <p className="text-gray-600">Pays Représentés</p>
+              <h3 className="text-2xl font-bold text-gray-900">1</h3>
+              <p className="text-gray-600">Pays Représenté</p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-red-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
@@ -285,16 +257,10 @@ export default function TeamPage() {
                         </ul>
                       </div>
 
-                      {/* Languages & Education */}
-                      <div className="grid md:grid-cols-2 gap-4 text-sm">
-                        <div>
-                          <h5 className="font-medium mb-2">Langues</h5>
-                          <p className="text-gray-600">{member.languages.join(", ")}</p>
-                        </div>
-                        <div>
-                          <h5 className="font-medium mb-2">Formation</h5>
-                          <p className="text-gray-600">{member.education}</p>
-                        </div>
+                      {/* Education */}
+                      <div className="text-sm">
+                        <h5 className="font-medium mb-2">Formation</h5>
+                        <p className="text-gray-600">{member.education}</p>
                       </div>
 
                       {/* Social Links */}
@@ -339,6 +305,18 @@ export default function TeamPage() {
                             <Instagram className="w-5 h-5" />
                           </Link>
                         )}
+                        {member.social.facebook && (
+                          <Link
+                            href={member.social.facebook}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-orange-500 hover:text-white transition-colors"
+                          >
+                            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            </svg>
+                          </Link>
+                        )}
                         {member.social.email && (
                           <Link
                             href={`mailto:${member.social.email}`}
@@ -379,7 +357,7 @@ export default function TeamPage() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-white text-white hover:bg-white hover:text-orange-500 w-full"
+                  className="border-white text-white hover:bg-white hover:text-orange-500 w-full bg-transparent"
                 >
                   Nous Contacter
                 </Button>
