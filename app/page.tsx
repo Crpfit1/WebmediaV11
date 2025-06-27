@@ -1,26 +1,31 @@
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Card, CardContent } from "@/components/ui/card"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { MobileMenu } from "@/components/mobile-menu"
 import {
+  Play,
   Users,
-  BookOpen,
-  TrendingUp,
   Calendar,
   MapPin,
+  ArrowRight,
+  Mic,
+  Headphones,
+  TrendingUp,
+  Globe,
+  BookOpen,
+  MessageCircle,
   Twitter,
+  Youtube,
   Linkedin,
   Instagram,
-  Youtube,
   Mail,
   Phone,
-  ExternalLink,
 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 
-export default function LandingPage() {
+export default function HomePage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
@@ -38,7 +43,7 @@ export default function LandingPage() {
           </Link>
 
           <nav className="hidden md:flex items-center space-x-8">
-            <Link href="#accueil" className="text-sm font-medium hover:text-orange-500 transition-colors">
+            <Link href="#accueil" className="text-sm font-medium text-orange-500">
               Accueil
             </Link>
             <Link href="#services" className="text-sm font-medium hover:text-orange-500 transition-colors">
@@ -47,11 +52,11 @@ export default function LandingPage() {
             <Link href="/evenements" className="text-sm font-medium hover:text-orange-500 transition-colors">
               Événements
             </Link>
-            <Link href="/blog" className="text-sm font-medium hover:text-orange-500 transition-colors">
-              Blog
-            </Link>
             <Link href="/equipe" className="text-sm font-medium hover:text-orange-500 transition-colors">
               Équipe
+            </Link>
+            <Link href="/blog" className="text-sm font-medium hover:text-orange-500 transition-colors">
+              Blog
             </Link>
             <Link href="#footer" className="text-sm font-medium hover:text-orange-500 transition-colors">
               Contact
@@ -70,423 +75,495 @@ export default function LandingPage() {
       </header>
 
       {/* Hero Section */}
-      <section id="accueil" className="py-20 lg:py-32 bg-gradient-to-br from-gray-50 to-orange-50">
+      <section id="accueil" className="py-20 lg:py-32 bg-gradient-to-br from-orange-50 to-red-50">
         <div className="container mx-auto px-4 lg:px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
-              <Badge className="bg-orange-100 text-orange-700 hover:bg-orange-100">
-                🎧 Podcast #1 sur la Blockchain en Afrique
-              </Badge>
-
-              <h1 className="text-4xl lg:text-6xl font-bold leading-tight">
-                La Technologie <span className="text-orange-500">Blockchain</span> en Afrique Francophone
-              </h1>
-
-              <p className="text-xl text-gray-600 leading-relaxed">
-                Découvrez l'avenir de la technologie blockchain en Afrique francophone. Nos podcasts, événements et
-                contenus éducatifs vous connectent aux innovations qui transforment le continent.
-              </p>
+              <div>
+                <Badge className="bg-orange-100 text-orange-700 hover:bg-orange-100 mb-4">
+                  🎙️ Podcast #1 Blockchain Afrique Francophone
+                </Badge>
+                <h1 className="text-4xl lg:text-6xl font-bold leading-tight mb-6">
+                  La Technologie{" "}
+                  <span className="text-orange-500 relative">
+                    Blockchain
+                    <svg
+                      className="absolute -bottom-2 left-0 w-full h-3 text-orange-200"
+                      viewBox="0 0 200 12"
+                      fill="currentColor"
+                    >
+                      <path d="M0,8 Q50,0 100,8 T200,8 L200,12 L0,12 Z" />
+                    </svg>
+                  </span>{" "}
+                  en Afrique Francophone
+                </h1>
+                <p className="text-xl text-gray-600 leading-relaxed">
+                  Découvrez l'univers passionnant de la blockchain, des cryptomonnaies et du Web3 à travers notre
+                  podcast éducatif. Interviews d'experts, analyses de marché et guides pratiques pour démocratiser
+                  l'accès aux technologies blockchain en Afrique francophone.
+                </p>
+              </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="https://www.youtube.com/@techblockchainaf" target="_blank" rel="noopener noreferrer">
-                  <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white w-full sm:w-auto">
-                    Écouter les Podcasts
+                  <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white">
+                    <Play className="w-5 h-5 mr-2" />
+                    Écouter Maintenant
                   </Button>
                 </Link>
-                <Link
-                  href="https://whatsapp.com/channel/0029Vao6uuXDuMRXaIQPqb16"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <Link href="/evenements">
                   <Button
                     size="lg"
                     variant="outline"
-                    className="border-orange-500 text-orange-500 hover:bg-orange-50 w-full sm:w-auto"
+                    className="border-orange-500 text-orange-500 hover:bg-orange-50 bg-transparent"
                   >
-                    Rejoindre la Communauté
+                    <Calendar className="w-5 h-5 mr-2" />
+                    Nos Événements
                   </Button>
                 </Link>
               </div>
 
-              <div className="flex items-center space-x-8 text-sm text-gray-500">
-                <div className="flex items-center space-x-2">
-                  <Users className="w-4 h-4" />
-                  <span>200+ Auditeurs</span>
+              {/* Stats */}
+              <div className="grid grid-cols-3 gap-8 pt-8 border-t border-gray-200">
+                <div>
+                  <div className="text-2xl font-bold text-gray-900">50+</div>
+                  <div className="text-sm text-gray-600">Épisodes</div>
                 </div>
-                <div className="flex items-center space-x-2">
-                  <Image
-                    src="/images/logo.png"
-                    alt="TechBlockchainAfr"
-                    width={16}
-                    height={16}
-                    className="rounded-full"
-                  />
-                  <span>60+ Épisodes</span>
+                <div>
+                  <div className="text-2xl font-bold text-gray-900">10K+</div>
+                  <div className="text-sm text-gray-600">Auditeurs</div>
                 </div>
-                <div className="flex items-center space-x-2">
-                  <Calendar className="w-4 h-4" />
-                  <span>10+ Événements</span>
+                <div>
+                  <div className="text-2xl font-bold text-gray-900">15+</div>
+                  <div className="text-sm text-gray-600">Événements</div>
                 </div>
               </div>
             </div>
 
             <div className="relative">
-              <Image
-                src="/images/hero-section.png"
-                alt="La Technologie Blockchain en Afrique Francophone - Événements et Communauté"
-                width={800}
-                height={600}
-                className="rounded-2xl shadow-2xl"
-              />
+              <div className="relative z-10">
+                <Image
+                  src="/images/hero-section.png"
+                  alt="TechBlockchainAfr Hero"
+                  width={600}
+                  height={400}
+                  className="rounded-2xl shadow-2xl"
+                />
+              </div>
+              {/* Decorative elements */}
+              <div className="absolute -top-4 -right-4 w-72 h-72 bg-orange-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+              <div className="absolute -bottom-8 -left-4 w-72 h-72 bg-red-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* Services Section */}
       <section id="services" className="py-20 lg:py-32">
         <div className="container mx-auto px-4 lg:px-6">
           <div className="text-center mb-16">
-            <Badge className="bg-orange-100 text-orange-700 hover:bg-orange-100 mb-4">Nos Services</Badge>
+            <Badge className="bg-orange-100 text-orange-700 hover:bg-orange-100 mb-4">🚀 Nos Services</Badge>
             <h2 className="text-3xl lg:text-5xl font-bold mb-6">
-              Votre Passerelle vers la <span className="text-orange-500">Blockchain</span>
+              Ce Que Nous <span className="text-orange-500">Offrons</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Nous offrons une gamme complète de services pour démocratiser la technologie blockchain en Afrique
-              francophone.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <Card className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg">
-              <CardContent className="p-8 text-center">
-                <div className="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-orange-500 transition-colors">
-                  <Image
-                    src="/images/logo.png"
-                    alt="TechBlockchainAfr"
-                    width={32}
-                    height={32}
-                    className="rounded-full group-hover:brightness-0 group-hover:invert transition-all"
-                  />
-                </div>
-                <h3 className="text-xl font-bold mb-4">Podcasts Éducatifs</h3>
-                <p className="text-gray-600">
-                  Des épisodes hebdomadaires avec des experts pour comprendre la blockchain et ses applications en
-                  Afrique.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg">
-              <CardContent className="p-8 text-center">
-                <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-green-500 transition-colors">
-                  <Users className="w-8 h-8 text-green-500 group-hover:text-white" />
-                </div>
-                <h3 className="text-xl font-bold mb-4">Communauté Active</h3>
-                <p className="text-gray-600">
-                  Rejoignez une communauté dynamique de passionnés, développeurs et entrepreneurs blockchain.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg">
-              <CardContent className="p-8 text-center">
-                <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-purple-500 transition-colors">
-                  <BookOpen className="w-8 h-8 text-purple-500 group-hover:text-white" />
-                </div>
-                <h3 className="text-xl font-bold mb-4">Formation & Éducation</h3>
-                <p className="text-gray-600">
-                  Programmes de formation complets pour maîtriser les technologies blockchain et crypto-monnaies.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg">
-              <CardContent className="p-8 text-center">
-                <div className="w-16 h-16 bg-red-100 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-red-500 transition-colors">
-                  <TrendingUp className="w-8 h-8 text-red-500 group-hover:text-white" />
-                </div>
-                <h3 className="text-xl font-bold mb-4">Analyses de Marché</h3>
-                <p className="text-gray-600">
-                  Insights exclusifs sur les tendances blockchain et opportunités d'investissement en Afrique.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Events Section */}
-      <section id="evenements" className="py-20 lg:py-32 bg-gray-50">
-        <div className="container mx-auto px-4 lg:px-6">
-          <div className="text-center mb-16">
-            <Badge className="bg-orange-100 text-orange-700 hover:bg-orange-100 mb-4">Nos Événements</Badge>
-            <h2 className="text-3xl lg:text-5xl font-bold mb-6">
-              Événements <span className="text-orange-500">Marquants</span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Découvrez les moments forts de nos conférences, meetups et événements blockchain à travers l'Afrique
-              francophone.
+              Une gamme complète de services pour vous accompagner dans votre découverte et maîtrise des technologies
+              blockchain.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="group overflow-hidden hover:shadow-xl transition-all duration-300">
-              <div className="relative">
-                <Image
-                  src="/placeholder.svg?height=300&width=400&text=Blockchain+Summit+Dakar"
-                  alt="Blockchain Summit Dakar 2024"
-                  width={400}
-                  height={300}
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute top-4 left-4">
-                  <Badge className="bg-orange-500 text-white">Conférence</Badge>
+            <Card className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg">
+              <CardHeader>
+                <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-orange-500 group-hover:text-white transition-colors">
+                  <Mic className="w-6 h-6 text-orange-500 group-hover:text-white" />
                 </div>
-              </div>
-              <CardContent className="p-6">
-                <div className="flex items-center text-sm text-gray-500 mb-2">
-                  <Calendar className="w-4 h-4 mr-2" />
-                  Mars 2024
-                  <MapPin className="w-4 h-4 ml-4 mr-2" />
-                  Dakar, Sénégal
-                </div>
-                <h3 className="text-xl font-bold mb-3">Blockchain Summit Dakar 2024</h3>
-                <p className="text-gray-600 mb-4">
-                  Le plus grand événement blockchain d'Afrique de l'Ouest avec plus de 500 participants et 30 speakers
-                  internationaux.
-                </p>
-                <Button variant="outline" size="sm" className="border-orange-500 text-orange-500 hover:bg-orange-50">
-                  Voir les Highlights
-                  <ExternalLink className="w-4 h-4 ml-2" />
-                </Button>
-              </CardContent>
+                <CardTitle className="text-xl">Podcast Éducatif</CardTitle>
+                <CardDescription>
+                  Épisodes hebdomadaires avec des experts, analyses de marché et guides pratiques pour tous les niveaux.
+                </CardDescription>
+              </CardHeader>
             </Card>
 
-            <Card className="group overflow-hidden hover:shadow-xl transition-all duration-300">
-              <div className="relative">
-                <Image
-                  src="/placeholder.svg?height=300&width=400&text=Crypto+Meetup+Abidjan"
-                  alt="Crypto Meetup Abidjan"
-                  width={400}
-                  height={300}
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute top-4 left-4">
-                  <Badge className="bg-green-500 text-white">Meetup</Badge>
+            <Card className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg">
+              <CardHeader>
+                <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-green-500 group-hover:text-white transition-colors">
+                  <Users className="w-6 h-6 text-green-500 group-hover:text-white" />
                 </div>
-              </div>
-              <CardContent className="p-6">
-                <div className="flex items-center text-sm text-gray-500 mb-2">
-                  <Calendar className="w-4 h-4 mr-2" />
-                  Janvier 2024
-                  <MapPin className="w-4 h-4 ml-4 mr-2" />
-                  Abidjan, Côte d'Ivoire
-                </div>
-                <h3 className="text-xl font-bold mb-3">Crypto Meetup Abidjan</h3>
-                <p className="text-gray-600 mb-4">
-                  Rencontre mensuelle de la communauté crypto d'Abidjan pour échanger sur les dernières innovations
-                  blockchain.
-                </p>
-                <Button variant="outline" size="sm" className="border-orange-500 text-orange-500 hover:bg-orange-50">
-                  Voir les Highlights
-                  <ExternalLink className="w-4 h-4 ml-2" />
-                </Button>
-              </CardContent>
+                <CardTitle className="text-xl">Événements & Meetups</CardTitle>
+                <CardDescription>
+                  Conférences, workshops et meetups à travers l'Afrique francophone pour rassembler la communauté.
+                </CardDescription>
+              </CardHeader>
             </Card>
 
-            <Card className="group overflow-hidden hover:shadow-xl transition-all duration-300">
-              <div className="relative">
-                <Image
-                  src="/placeholder.svg?height=300&width=400&text=DeFi+Workshop+Casablanca"
-                  alt="DeFi Workshop Casablanca"
-                  width={400}
-                  height={300}
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute top-4 left-4">
-                  <Badge className="bg-purple-500 text-white">Workshop</Badge>
+            <Card className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg">
+              <CardHeader>
+                <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-purple-500 group-hover:text-white transition-colors">
+                  <BookOpen className="w-6 h-6 text-purple-500 group-hover:text-white" />
                 </div>
-              </div>
-              <CardContent className="p-6">
-                <div className="flex items-center text-sm text-gray-500 mb-2">
-                  <Calendar className="w-4 h-4 mr-2" />
-                  Février 2024
-                  <MapPin className="w-4 h-4 ml-4 mr-2" />
-                  Casablanca, Maroc
+                <CardTitle className="text-xl">Formation & Éducation</CardTitle>
+                <CardDescription>
+                  Ressources éducatives, guides débutants et formations pour démocratiser l'accès à la blockchain.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+
+            <Card className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg">
+              <CardHeader>
+                <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-blue-500 group-hover:text-white transition-colors">
+                  <TrendingUp className="w-6 h-6 text-blue-500 group-hover:text-white" />
                 </div>
-                <h3 className="text-xl font-bold mb-3">DeFi Workshop Casablanca</h3>
-                <p className="text-gray-600 mb-4">
-                  Formation intensive sur la finance décentralisée (DeFi) avec des cas d'usage pratiques pour l'Afrique
-                  du Nord.
-                </p>
-                <Button variant="outline" size="sm" className="border-orange-500 text-orange-500 hover:bg-orange-50">
-                  Voir les Highlights
-                  <ExternalLink className="w-4 h-4 ml-2" />
-                </Button>
-              </CardContent>
+                <CardTitle className="text-xl">Analyses de Marché</CardTitle>
+                <CardDescription>
+                  Analyses approfondies des tendances crypto et blockchain avec un focus sur le marché africain.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+
+            <Card className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg">
+              <CardHeader>
+                <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-red-500 group-hover:text-white transition-colors">
+                  <MessageCircle className="w-6 h-6 text-red-500 group-hover:text-white" />
+                </div>
+                <CardTitle className="text-xl">Communauté Active</CardTitle>
+                <CardDescription>
+                  Rejoignez notre communauté dynamique sur WhatsApp, LinkedIn et nos réseaux sociaux.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+
+            <Card className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg">
+              <CardHeader>
+                <div className="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-yellow-500 group-hover:text-white transition-colors">
+                  <Globe className="w-6 h-6 text-yellow-500 group-hover:text-white" />
+                </div>
+                <CardTitle className="text-xl">Réseau Francophone</CardTitle>
+                <CardDescription>
+                  Un pont entre les écosystèmes blockchain d'Afrique francophone et le reste du monde.
+                </CardDescription>
+              </CardHeader>
             </Card>
           </div>
         </div>
       </section>
 
-      {/* Events Link Bar */}
-      <section className="py-12 bg-white border-t border-gray-100">
+      {/* Events Section - Updated with only upcoming events */}
+      <section className="py-20 lg:py-32 bg-gray-50">
         <div className="container mx-auto px-4 lg:px-6">
+          <div className="text-center mb-16">
+            <Badge className="bg-green-100 text-green-700 hover:bg-green-100 mb-4">📅 Événements à Venir</Badge>
+            <h2 className="text-3xl lg:text-5xl font-bold mb-6">
+              Nos Prochains <span className="text-orange-500">Événements</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Rejoignez-nous lors de nos prochains événements blockchain à travers l'Afrique francophone.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {/* Africa Trading Cup */}
+            <Card className="group overflow-hidden hover:shadow-xl transition-all duration-300">
+              <div className="relative">
+                <div className="w-full h-48 bg-gradient-to-br from-green-400 to-blue-500 flex items-center justify-center">
+                  <Image
+                    src="/images/africa-trading-cup-logo.jpeg"
+                    alt="Africa Trading Cup 2025"
+                    width={120}
+                    height={120}
+                    className="object-contain"
+                  />
+                </div>
+                <div className="absolute top-4 left-4">
+                  <Badge className="bg-green-500 text-white">Compétition</Badge>
+                </div>
+              </div>
+              <CardContent className="p-6">
+                <div className="flex items-center text-sm text-gray-500 mb-2">
+                  <Calendar className="w-4 h-4 mr-2" />
+                  04 Juillet 2025
+                  <MapPin className="w-4 h-4 ml-4 mr-2" />
+                  Côte d'Ivoire
+                </div>
+                <h3 className="text-xl font-bold mb-3">Africa Trading Cup 2025</h3>
+                <p className="text-gray-600 mb-4">
+                  Première compétition de trading crypto en Afrique. Éducation financière et sensibilisation aux
+                  opportunités du trading.
+                </p>
+                <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white">
+                  En savoir plus
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Stellar Meetup Abidjan */}
+            <Card className="group overflow-hidden hover:shadow-xl transition-all duration-300">
+              <div className="relative">
+                <Image
+                  src="/images/stellar-meetup-abidjan.jpeg"
+                  alt="Stellar Meetup Abidjan N°2"
+                  width={400}
+                  height={300}
+                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute top-4 left-4">
+                  <Badge className="bg-yellow-500 text-white">Meetup</Badge>
+                </div>
+              </div>
+              <CardContent className="p-6">
+                <div className="flex items-center text-sm text-gray-500 mb-2">
+                  <Calendar className="w-4 h-4 mr-2" />
+                  19 Juillet 2025
+                  <MapPin className="w-4 h-4 ml-4 mr-2" />
+                  Abidjan, Riviera
+                </div>
+                <h3 className="text-xl font-bold mb-3">Stellar Meetup Abidjan N°2</h3>
+                <p className="text-gray-600 mb-4">
+                  Construire, connecter et innover sur Stellar. Workshop pratique sur l'écosystème Stellar et les smart
+                  contracts Soroban.
+                </p>
+                <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white">
+                  S'inscrire
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* 10 Years of Ethereum */}
+            <Card className="group overflow-hidden hover:shadow-xl transition-all duration-300">
+              <div className="relative">
+                <Image
+                  src="/images/ethereum-10-years-cote-divoire.png"
+                  alt="10 Ans d'Anniversaire de Ethereum"
+                  width={400}
+                  height={300}
+                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute top-4 left-4">
+                  <Badge className="bg-blue-500 text-white">Anniversaire</Badge>
+                </div>
+              </div>
+              <CardContent className="p-6">
+                <div className="flex items-center text-sm text-gray-500 mb-2">
+                  <Calendar className="w-4 h-4 mr-2" />
+                  30 Juillet 2025
+                  <MapPin className="w-4 h-4 ml-4 mr-2" />
+                  Abidjan, Riviera
+                </div>
+                <h3 className="text-xl font-bold mb-3">10 Ans d'Anniversaire de Ethereum</h3>
+                <p className="text-gray-600 mb-4">
+                  Célébrons ensemble les 10 ans d'Ethereum en Côte d'Ivoire. Présentations, networking et
+                  rafraîchissements offerts.
+                </p>
+                <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white">
+                  Participer
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+
           <div className="text-center">
-            <p className="text-gray-600 mb-6">Découvrez tous nos événements passés et à venir</p>
             <Link href="/evenements">
-              <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white">
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-orange-500 text-orange-500 hover:bg-orange-50 bg-transparent"
+              >
                 Voir Tous les Événements
-                <ExternalLink className="w-4 h-4 ml-2" />
+                <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Team Section */}
-      <section id="equipe" className="py-20 lg:py-32">
+      {/* Latest Episodes */}
+      <section className="py-20 lg:py-32">
         <div className="container mx-auto px-4 lg:px-6">
           <div className="text-center mb-16">
-            <Badge className="bg-orange-100 text-orange-700 hover:bg-orange-100 mb-4">Notre Équipe</Badge>
+            <Badge className="bg-purple-100 text-purple-700 hover:bg-purple-100 mb-4">🎧 Derniers Épisodes</Badge>
             <h2 className="text-3xl lg:text-5xl font-bold mb-6">
-              Les Visionnaires derrière <span className="text-orange-500">TechBlockchainAfr</span>
+              Épisodes <span className="text-orange-500">Récents</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Une équipe passionnée d'experts blockchain, journalistes tech et entrepreneurs dédiés à l'éducation et
-              l'innovation en Afrique.
+              Découvrez nos derniers épisodes avec des experts de la blockchain et des analyses approfondies du marché
+              crypto.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="group text-center hover:shadow-xl transition-all duration-300 border-0 shadow-lg">
-              <CardContent className="p-8">
-                <div className="relative mb-6">
-                  <Image
-                    src="/placeholder.svg?height=120&width=120"
-                    alt="Aminata Diallo"
-                    width={120}
-                    height={120}
-                    className="w-24 h-24 rounded-full mx-auto object-cover"
-                  />
-                  <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-green-500 rounded-full border-4 border-white"></div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            <Card className="group hover:shadow-xl transition-all duration-300">
+              <CardContent className="p-6">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mr-4">
+                    <Headphones className="w-6 h-6 text-orange-500" />
+                  </div>
+                  <div>
+                    <Badge variant="outline" className="text-xs">
+                      Épisode #47
+                    </Badge>
+                    <p className="text-sm text-gray-500">Il y a 2 jours</p>
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold mb-2">Aminata Diallo</h3>
-                <p className="text-orange-500 font-medium mb-3">Fondatrice & Host Principal</p>
-                <p className="text-gray-600 text-sm mb-6">
-                  Experte blockchain avec 8 ans d'expérience. Ancienne développeuse chez Ethereum Foundation, passionnée
-                  par l'adoption blockchain en Afrique.
+                <h3 className="text-xl font-bold mb-3">L'avenir de la DeFi en Afrique</h3>
+                <p className="text-gray-600 mb-4">
+                  Discussion avec des experts sur les opportunités et défis de la finance décentralisée sur le continent
+                  africain.
                 </p>
-                <div className="flex justify-center space-x-3">
-                  <Link
-                    href="#"
-                    className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center hover:bg-orange-500 hover:text-white transition-colors"
-                  >
-                    <Twitter className="w-4 h-4" />
-                  </Link>
-                  <Link
-                    href="#"
-                    className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center hover:bg-orange-500 hover:text-white transition-colors"
-                  >
-                    <Linkedin className="w-4 h-4" />
-                  </Link>
-                  <Link
-                    href="#"
-                    className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center hover:bg-orange-500 hover:text-white transition-colors"
-                  >
-                    <Mail className="w-4 h-4" />
-                  </Link>
-                </div>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="border-orange-500 text-orange-500 hover:bg-orange-50 bg-transparent"
+                >
+                  <Play className="w-4 h-4 mr-2" />
+                  Écouter
+                </Button>
               </CardContent>
             </Card>
 
-            <Card className="group text-center hover:shadow-xl transition-all duration-300 border-0 shadow-lg">
-              <CardContent className="p-8">
-                <div className="relative mb-6">
-                  <Image
-                    src="/placeholder.svg?height=120&width=120"
-                    alt="Omar Benali"
-                    width={120}
-                    height={120}
-                    className="w-24 h-24 rounded-full mx-auto object-cover"
-                  />
-                  <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-green-500 rounded-full border-4 border-white"></div>
+            <Card className="group hover:shadow-xl transition-all duration-300">
+              <CardContent className="p-6">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                    <Headphones className="w-6 h-6 text-green-500" />
+                  </div>
+                  <div>
+                    <Badge variant="outline" className="text-xs">
+                      Épisode #46
+                    </Badge>
+                    <p className="text-sm text-gray-500">Il y a 1 semaine</p>
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold mb-2">Omar Benali</h3>
-                <p className="text-orange-500 font-medium mb-3">Co-Host & Analyste Crypto</p>
-                <p className="text-gray-600 text-sm mb-6">
-                  Trader professionnel et analyste crypto depuis 6 ans. Spécialiste des marchés africains et des
-                  stablecoins régionaux.
+                <h3 className="text-xl font-bold mb-3">Bitcoin et l'adoption en Afrique</h3>
+                <p className="text-gray-600 mb-4">
+                  Analyse de l'adoption croissante de Bitcoin en Afrique et son impact sur l'économie locale.
                 </p>
-                <div className="flex justify-center space-x-3">
-                  <Link
-                    href="#"
-                    className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center hover:bg-orange-500 hover:text-white transition-colors"
-                  >
-                    <Twitter className="w-4 h-4" />
-                  </Link>
-                  <Link
-                    href="#"
-                    className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center hover:bg-orange-500 hover:text-white transition-colors"
-                  >
-                    <Linkedin className="w-4 h-4" />
-                  </Link>
-                  <Link
-                    href="#"
-                    className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center hover:bg-orange-500 hover:text-white transition-colors"
-                  >
-                    <Youtube className="w-4 h-4" />
-                  </Link>
-                </div>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="border-orange-500 text-orange-500 hover:bg-orange-50 bg-transparent"
+                >
+                  <Play className="w-4 h-4 mr-2" />
+                  Écouter
+                </Button>
               </CardContent>
             </Card>
 
-            <Card className="group text-center hover:shadow-xl transition-all duration-300 border-0 shadow-lg">
-              <CardContent className="p-8">
-                <div className="relative mb-6">
-                  <Image
-                    src="/placeholder.svg?height=120&width=120"
-                    alt="Fatou Kone"
-                    width={120}
-                    height={120}
-                    className="w-24 h-24 rounded-full mx-auto object-cover"
-                  />
-                  <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-green-500 rounded-full border-4 border-white"></div>
+            <Card className="group hover:shadow-xl transition-all duration-300">
+              <CardContent className="p-6">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4">
+                    <Headphones className="w-6 h-6 text-purple-500" />
+                  </div>
+                  <div>
+                    <Badge variant="outline" className="text-xs">
+                      Épisode #45
+                    </Badge>
+                    <p className="text-sm text-gray-500">Il y a 2 semaines</p>
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold mb-2">Fatou Koné</h3>
-                <p className="text-orange-500 font-medium mb-3">Responsable Communauté</p>
-                <p className="text-gray-600 text-sm mb-6">
-                  Community manager experte avec une passion pour l'éducation tech. Gère notre communauté de 50K+
-                  membres à travers l'Afrique.
+                <h3 className="text-xl font-bold mb-3">NFTs et Art Numérique Africain</h3>
+                <p className="text-gray-600 mb-4">
+                  Rencontre avec des artistes africains qui révolutionnent l'art numérique grâce aux NFTs.
                 </p>
-                <div className="flex justify-center space-x-3">
-                  <Link
-                    href="#"
-                    className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center hover:bg-orange-500 hover:text-white transition-colors"
-                  >
-                    <Instagram className="w-4 h-4" />
-                  </Link>
-                  <Link
-                    href="#"
-                    className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center hover:bg-orange-500 hover:text-white transition-colors"
-                  >
-                    <Linkedin className="w-4 h-4" />
-                  </Link>
-                  <Link
-                    href="#"
-                    className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center hover:bg-orange-500 hover:text-white transition-colors"
-                  >
-                    <Mail className="w-4 h-4" />
-                  </Link>
-                </div>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="border-orange-500 text-orange-500 hover:bg-orange-50 bg-transparent"
+                >
+                  <Play className="w-4 h-4 mr-2" />
+                  Écouter
+                </Button>
               </CardContent>
             </Card>
+          </div>
+
+          <div className="text-center">
+            <Link href="https://www.youtube.com/@techblockchainaf" target="_blank" rel="noopener noreferrer">
+              <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white">
+                <Youtube className="w-5 h-5 mr-2" />
+                Voir Tous les Épisodes
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* Final CTA Section */}
+      {/* Team Preview */}
+      <section className="py-20 lg:py-32 bg-gray-50">
+        <div className="container mx-auto px-4 lg:px-6">
+          <div className="text-center mb-16">
+            <Badge className="bg-blue-100 text-blue-700 hover:bg-blue-100 mb-4">👥 Notre Équipe</Badge>
+            <h2 className="text-3xl lg:text-5xl font-bold mb-6">
+              L'Équipe <span className="text-orange-500">TechBlockchainAfr</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Rencontrez les passionnés qui rendent possible la démocratisation de la blockchain en Afrique francophone.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            <Card className="text-center group hover:shadow-xl transition-all duration-300">
+              <CardContent className="p-8">
+                <Avatar className="w-24 h-24 mx-auto mb-6">
+                  <AvatarImage src="/images/frame-ayemou.png" alt="Ayémou Loïc" />
+                  <AvatarFallback>AL</AvatarFallback>
+                </Avatar>
+                <h3 className="text-xl font-bold mb-2">Ayémou Loïc</h3>
+                <p className="text-orange-500 font-medium mb-3">Fondateur & Host Principal</p>
+                <p className="text-gray-600 text-sm">
+                  Expert blockchain et entrepreneur passionné par l'éducation financière en Afrique.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="text-center group hover:shadow-xl transition-all duration-300">
+              <CardContent className="p-8">
+                <Avatar className="w-24 h-24 mx-auto mb-6">
+                  <AvatarImage src="/images/frame-patrick.png" alt="Patrick Yeboue" />
+                  <AvatarFallback>PY</AvatarFallback>
+                </Avatar>
+                <h3 className="text-xl font-bold mb-2">Patrick Yeboue</h3>
+                <p className="text-orange-500 font-medium mb-3">Co-Host & Analyste</p>
+                <p className="text-gray-600 text-sm">
+                  Spécialiste en analyse technique et développement blockchain avec une expertise en DeFi.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="text-center group hover:shadow-xl transition-all duration-300">
+              <CardContent className="p-8">
+                <Avatar className="w-24 h-24 mx-auto mb-6">
+                  <AvatarImage src="/images/frame-michel.png" alt="Michel Kouakou" />
+                  <AvatarFallback>MK</AvatarFallback>
+                </Avatar>
+                <h3 className="text-xl font-bold mb-2">Michel Kouakou</h3>
+                <p className="text-orange-500 font-medium mb-3">Producteur & Éditeur</p>
+                <p className="text-gray-600 text-sm">
+                  Responsable de la production et de l'édition des contenus, expert en communication digitale.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="text-center">
+            <Link href="/equipe">
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-orange-500 text-orange-500 hover:bg-orange-50 bg-transparent"
+              >
+                Découvrir l'Équipe Complète
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
       <section className="py-20 lg:py-32 bg-gradient-to-r from-orange-500 to-red-500">
         <div className="container mx-auto px-4 lg:px-6 text-center">
           <div className="max-w-4xl mx-auto">
@@ -494,32 +571,33 @@ export default function LandingPage() {
               Rejoignez la Révolution Blockchain en Afrique
             </h2>
             <p className="text-xl text-orange-100 mb-8 leading-relaxed">
-              Ne manquez aucun épisode, événement ou opportunité. Inscrivez-vous à notre newsletter et faites partie de
-              la communauté qui façonne l'avenir de la blockchain en Afrique francophone.
+              Ne manquez aucun épisode de notre podcast et restez informé des dernières actualités blockchain en Afrique
+              francophone. Abonnez-vous dès maintenant !
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto mb-8">
-              <Input
-                type="email"
-                placeholder="Votre adresse email"
-                className="bg-white/10 border-white/20 text-white placeholder:text-orange-200 flex-1"
-              />
-              <Button className="bg-white text-orange-500 hover:bg-orange-50 font-semibold">
-                S'inscrire Maintenant
-              </Button>
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white text-white hover:bg-white hover:text-orange-500"
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+              <Link href="https://www.youtube.com/@techblockchainaf" target="_blank" rel="noopener noreferrer">
+                <Button size="lg" className="bg-white text-orange-500 hover:bg-orange-50 font-semibold">
+                  <Youtube className="w-5 h-5 mr-2" />
+                  S'abonner sur YouTube
+                </Button>
+              </Link>
+              <Link
+                href="https://whatsapp.com/channel/0029Vao6uuXDuMRXaIQPqb16"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                Écouter les Podcasts
-              </Button>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-white text-white hover:bg-white hover:text-orange-500 bg-transparent"
+                >
+                  Rejoindre WhatsApp
+                </Button>
+              </Link>
             </div>
 
-            <p className="text-orange-200 text-sm mt-6">Construisons ensemble pour la prochaine génération</p>
+            <p className="text-orange-200 text-sm">Plus de 10K auditeurs nous font déjà confiance</p>
           </div>
         </div>
       </section>
