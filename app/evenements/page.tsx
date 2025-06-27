@@ -25,79 +25,72 @@ export default function EventsPage() {
   const upcomingEvents = [
     {
       id: 1,
-      title: "Blockchain & IA Summit Abidjan 2024",
+      title: "Africa Trading Cup 2025",
       description:
-        "Le plus grand événement tech de l'année en Côte d'Ivoire. Découvrez comment l'IA et la blockchain transforment l'Afrique de l'Ouest.",
-      date: "15 Juin 2024",
-      time: "09:00 - 18:00",
-      location: "Sofitel Abidjan Hotel Ivoire",
-      city: "Abidjan, Côte d'Ivoire",
-      type: "Conférence",
+        "Promouvoir l'éducation financière et sensibiliser aux opportunités et aux risques liés au trading et à l'investissement boursier.",
+      date: "04 Juillet 2025",
+      location: "Seen Hôtel, Plateau",
+      city: "Côte d'Ivoire",
+      type: "Conférence, Atelier",
       status: "Inscriptions Ouvertes",
-      attendees: "500+ participants attendus",
+      attendees: "150+ participants attendus",
       price: "Gratuit",
-      image: "/placeholder.svg?height=300&width=400",
-      highlights: [
-        "20+ speakers internationaux",
-        "3 tracks parallèles",
-        "Networking premium",
-        "Déjeuner d'affaires inclus",
-      ],
-      speakers: ["Aminata Diallo", "Omar Benali", "Invités Spéciaux"],
+      image: "/images/africa-trading-cup-logo.jpeg",
+      highlights: ["5+ speakers attendus", "+5 thématiques: Trading, Psychologie, Crypto, Blockchain", "Networking"],
+      speakers: ["Ayémou Loïc", "Serge Aboua", "+Invités Spéciaux"],
     },
     {
       id: 2,
-      title: "DeFi Workshop Pratique - Dakar",
-      description:
-        "Formation intensive sur la finance décentralisée avec des cas pratiques adaptés au marché sénégalais.",
-      date: "28 Mai 2024",
-      time: "14:00 - 17:00",
-      location: "Université Cheikh Anta Diop",
-      city: "Dakar, Sénégal",
+      title: "Stellar Meetup Abidjan",
+      description: "Conférence, Ateliers et Exposition de Projets VR + GameFi & NFTs",
+      date: "19 Juillet 2025",
+      location: "Abidjan, Riviera",
+      city: "Côte D'Ivoire",
       type: "Workshop",
       status: "Places Limitées",
       attendees: "50 participants max",
-      price: "15,000 FCFA",
-      image: "/placeholder.svg?height=300&width=400",
+      price: "0 FCFA",
+      image: "/images/stellar-meetup-abidjan.jpeg",
       highlights: [
-        "Formation pratique 3h",
-        "Certificat de participation",
-        "Kit de démarrage DeFi",
-        "Support post-formation",
+        "Découvrir l'écosystème de Stellar",
+        "Construire son projet sur Stellar",
+        "Débuter avec RUST",
+        "Structure du Smart Contract Soroban",
       ],
-      speakers: ["Omar Benali", "Experts DeFi locaux"],
+      speakers: ["Ayémou Loïc", "Patrick Yeboue", "Souleymane Ouattara"],
     },
     {
       id: 3,
-      title: "Crypto Meetup Mensuel - Casablanca",
-      description: "Rencontre mensuelle de la communauté crypto marocaine pour échanger et networker.",
-      date: "10 Mai 2024",
-      time: "19:00 - 21:00",
-      location: "Technopark Casablanca",
-      city: "Casablanca, Maroc",
+      title: "Meetup: 10 Ans d'Anniversaire de Ethereum",
+      description: "Venez célébrer les 10 ans d'anniversaire de Ethereum à Abidjan",
+      date: "30 Juillet 2024",
+      time: "10:00 - 16:00",
+      location: "Abidjan Riviera",
+      city: "Abidjan, Côte D'Ivoire",
       type: "Meetup",
       status: "Inscription Gratuite",
-      attendees: "80+ participants",
+      attendees: "50+ participants",
       price: "Gratuit",
       image: "/placeholder.svg?height=300&width=400",
-      highlights: ["Présentation du mois", "Session Q&A", "Networking informel", "Rafraîchissements offerts"],
-      speakers: ["Communauté LTBAF Maroc"],
+      highlights: ["Présentation d'Éthereum", "Session Q&A", "Networking informel", "Rafraîchissements offerts"],
+      speakers: ["Souleymane Ouattara", "Ayémou Loïc", "Patrick Yeboue"],
     },
   ]
 
   const pastEvents = [
     {
       id: 4,
-      title: "Blockchain Summit Dakar 2024",
+      title: "Afro Web3 Babi 2024",
       description:
-        "Le plus grand événement blockchain d'Afrique de l'Ouest avec plus de 500 participants et 30 speakers internationaux.",
-      date: "15 Mars 2024",
-      location: "King Fahd Palace Hotel",
-      city: "Dakar, Sénégal",
+        "Découvrez les opportunités des nouvelles technologies et entamez un voyage dans l'univers incroyable de la blockchain et du Web3.",
+      date: "13 Juillet 2024",
+      location: "Online",
+      city: "Abidjan, Côte d'Ivoire",
+      cities: "Côte d'Ivoire, Benin, Cameroun, Burkina Faso, France",
       type: "Conférence",
-      attendees: "500+ participants",
-      image: "/placeholder.svg?height=300&width=400",
-      highlights: ["30 speakers internationaux", "500+ participants", "15 pays représentés", "20+ startups présentées"],
+      attendees: "100+ participants",
+      image: "/images/afro-web3-cover.png",
+      highlights: ["+20 speakers", "100+ participants", "10 pays représentés", "10+ startups participantes"],
       resources: {
         photos: true,
         videos: true,
@@ -106,15 +99,15 @@ export default function EventsPage() {
     },
     {
       id: 5,
-      title: "Crypto Meetup Abidjan - Édition Spéciale",
-      description: "Rencontre exceptionnelle avec des experts internationaux de passage en Côte d'Ivoire.",
-      date: "20 Janvier 2024",
-      location: "Pullman Abidjan",
+      title: "GameFi & NFTs Conference",
+      description: "Conférence, Ateliers et Exposition de Projets VR + GameFi & NFTs",
+      date: "Octobre 2024",
+      location: "Belle Côte",
       city: "Abidjan, Côte d'Ivoire",
       type: "Meetup",
-      attendees: "120+ participants",
-      image: "/placeholder.svg?height=300&width=400",
-      highlights: ["Experts internationaux", "Panel sur l'adoption crypto", "Networking premium", "Couverture média"],
+      attendees: "30+ participants",
+      image: "/images/gamefi-nfts-announce.png",
+      highlights: ["Panel sur la crypto et des NFTs", "Panel sur la GameFi", "Exposition VR", "Couverture média"],
       resources: {
         photos: true,
         videos: true,
@@ -285,13 +278,7 @@ export default function EventsPage() {
                     <div className="grid lg:grid-cols-3 gap-0">
                       <div className="relative">
                         <Image
-                          src={
-                            event.id === 1
-                              ? "/placeholder.svg?height=300&width=400&text=Blockchain+IA+Summit+Abidjan"
-                              : event.id === 2
-                                ? "/placeholder.svg?height=300&width=400&text=DeFi+Workshop+Dakar"
-                                : "/placeholder.svg?height=300&width=400&text=Crypto+Meetup+Casablanca"
-                          }
+                          src={event.image || "/placeholder.svg"}
                           alt={event.title}
                           width={400}
                           height={300}
@@ -300,7 +287,7 @@ export default function EventsPage() {
                         <div className="absolute top-4 left-4">
                           <Badge
                             className={`${
-                              event.type === "Conférence"
+                              event.type === "Conférence, Atelier"
                                 ? "bg-orange-500"
                                 : event.type === "Workshop"
                                   ? "bg-purple-500"
@@ -393,7 +380,10 @@ export default function EventsPage() {
                               S'inscrire Maintenant
                               <ExternalLink className="w-4 h-4 ml-2" />
                             </Button>
-                            <Button variant="outline" className="border-orange-500 text-orange-500 hover:bg-orange-50">
+                            <Button
+                              variant="outline"
+                              className="border-orange-500 text-orange-500 hover:bg-orange-50 bg-transparent"
+                            >
                               Plus d'Infos
                             </Button>
                           </div>
@@ -422,15 +412,7 @@ export default function EventsPage() {
                   >
                     <div className="relative">
                       <Image
-                        src={
-                          event.id === 4
-                            ? "/placeholder.svg?height=300&width=400&text=Blockchain+Summit+Dakar+2024"
-                            : event.id === 5
-                              ? "/placeholder.svg?height=300&width=400&text=Crypto+Meetup+Abidjan+Special"
-                              : event.id === 6
-                                ? "/placeholder.svg?height=300&width=400&text=DeFi+Workshop+Casablanca+Past"
-                                : "/placeholder.svg?height=300&width=400&text=Web3+Entrepreneuriat+Bamako"
-                        }
+                        src={event.image || "/placeholder.svg"}
                         alt={event.title}
                         width={400}
                         height={300}
@@ -497,19 +479,19 @@ export default function EventsPage() {
                           <h4 className="font-semibold mb-3 text-sm">Ressources Disponibles</h4>
                           <div className="flex space-x-4">
                             {event.resources.photos && (
-                              <Button size="sm" variant="outline" className="text-xs">
+                              <Button size="sm" variant="outline" className="text-xs bg-transparent">
                                 <ImageIcon className="w-3 h-3 mr-1" />
                                 Photos
                               </Button>
                             )}
                             {event.resources.videos && (
-                              <Button size="sm" variant="outline" className="text-xs">
+                              <Button size="sm" variant="outline" className="text-xs bg-transparent">
                                 <Video className="w-3 h-3 mr-1" />
                                 Vidéos
                               </Button>
                             )}
                             {event.resources.presentations && (
-                              <Button size="sm" variant="outline" className="text-xs">
+                              <Button size="sm" variant="outline" className="text-xs bg-transparent">
                                 <ExternalLink className="w-3 h-3 mr-1" />
                                 Slides
                               </Button>

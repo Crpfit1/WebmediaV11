@@ -1,19 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import {
-  Twitter,
-  Linkedin,
-  Instagram,
-  Youtube,
-  Mail,
-  MapPin,
-  Calendar,
-  Award,
-  Users,
-  ExternalLink,
-  Phone,
-} from "lucide-react"
+import { MapPin, Users, ExternalLink, Twitter, Youtube, Linkedin, Instagram, Mail, Phone } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { MobileMenu } from "@/components/mobile-menu"
@@ -24,7 +12,7 @@ export default function TeamPage() {
       id: 1,
       name: "Ayémou Essouba Loïc-Yvan",
       role: "Founder & CEO",
-      location: "Abidjan, Côte D'Ivoire",
+      location: "Abidjan,Côte D'Ivoire",
       bio: "Après ses études à PIGIER-Côte D'Ivoire, Ayémou décroche une Licence en Communication & Développement des Marques. Passionné par la Tech, il rejoint BINANCE au poste de Community Manager, puis Operations Manager pour le département Afrique Francophone. Au cours de l'année 2023, Ayémou décroche une nouvelle position chez IZICHANGE en tant que Directeur Pays pour la filiale de Côte d'Ivoire et développe ses actions autour du B2B. Aujourd'hui Ayémou porte le titre de Blockchain Project Manager et contribue à l'éclosion de projets Blockchain en Afrique Francophone.",
       expertise: ["Blockchain Development", "DeFi Protocols", "Smart Contracts", "Stellar", "Rust"],
       achievements: [
@@ -47,14 +35,14 @@ export default function TeamPage() {
       id: 2,
       name: "Patrick Yeboue",
       role: "Blockchain & Web3 Project Manager",
-      location: "Abidjan, Côte D'Ivoire",
+      location: "Abidjan,Côte D'Ivoire",
       bio: "Patrick Yeboue est un entrepreneur et investisseur passionné par l'univers du Web3, de la blockchain et des crypto-actifs, Blockchain & Web3 Project Manager, Official Binance Angel chez Binance",
       expertise: ["Trading Crypto", "Analyse Technique", "DeFi", "Stablecoins", "Marchés Africains"],
       achievements: [
         "Fondateur de plusieurs initiatives de formation et de développement dans la crypto",
         "Co-founder de Bit Trading Education, un centre de formation",
         "Auteur avec +10 Ouvrages",
-        "Formateur de 1,000+ étudiants à travers Binance Academy",
+        "Formateur de 1,000+ participants à travers Binance Academy",
       ],
       experience: "10+ années",
       projects: "Bit Trading Edu",
@@ -76,7 +64,7 @@ export default function TeamPage() {
         "J'ai travaillé en agence pendant 6 ans (ex-Voodoo Digital – Voodoo Communication): Social Media, Project management, Achat media digital, Google Ads",
         "J'ai contribué à la croissance de Wave Mobile Money via les canaux digitaux entre 2021 et 2023",
         "J'ai exploré le web3 en développant des campagnes digitales pour Binance, leader mondial de l'écosystème crypto, sur les marchés d'Afrique Francophone en 2023",
-        "J'ai fondé en 2023 le média d'éducation au web3 – www.lecoinmagique.com",
+        "J'ai fondé en 2023 le média d'éducation au web3 - www.lecoinmagique.com",
       ],
       experience: "14+ années",
       projects: "100+ campagnes marketing réussies",
@@ -144,11 +132,11 @@ export default function TeamPage() {
           <div className="text-center mb-12">
             <Badge className="bg-orange-100 text-orange-700 hover:bg-orange-100 mb-4">👥 Notre Équipe</Badge>
             <h1 className="text-4xl lg:text-6xl font-bold mb-6">
-              Les Visionnaires derrière <span className="text-orange-500">TechBlockchainAfr</span>
+              L'Équipe <span className="text-orange-500">TechBlockchainAfr</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Rencontrez l'équipe passionnée d'experts blockchain, développeurs, analystes et community managers qui
-              travaillent chaque jour pour démocratiser la technologie blockchain en Afrique francophone.
+              Rencontrez les experts passionnés qui donnent vie à TechBlockchainAfr. Une équipe dédiée à l'éducation
+              blockchain et à l'innovation technologique en Afrique francophone.
             </p>
           </div>
 
@@ -159,11 +147,11 @@ export default function TeamPage() {
                 <Users className="w-8 h-8 text-orange-500" />
               </div>
               <h3 className="text-2xl font-bold text-gray-900">3+</h3>
-              <p className="text-gray-600">Experts Dédiés</p>
+              <p className="text-gray-600">Experts Blockchain</p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Award className="w-8 h-8 text-green-500" />
+                <ExternalLink className="w-8 h-8 text-green-500" />
               </div>
               <h3 className="text-2xl font-bold text-gray-900">30+</h3>
               <p className="text-gray-600">Années d'Expérience</p>
@@ -173,14 +161,14 @@ export default function TeamPage() {
                 <MapPin className="w-8 h-8 text-purple-500" />
               </div>
               <h3 className="text-2xl font-bold text-gray-900">1</h3>
-              <p className="text-gray-600">Pays Représenté</p>
+              <p className="text-gray-600">Pays</p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-red-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Calendar className="w-8 h-8 text-red-500" />
+                <Youtube className="w-8 h-8 text-red-500" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900">2022</h3>
-              <p className="text-gray-600">Année de Création</p>
+              <h3 className="text-2xl font-bold text-gray-900">60+</h3>
+              <p className="text-gray-600">Épisodes Podcast</p>
             </div>
           </div>
         </div>
@@ -193,42 +181,44 @@ export default function TeamPage() {
             {teamMembers.map((member, index) => (
               <Card
                 key={member.id}
-                className="overflow-hidden hover:shadow-2xl transition-all duration-300 border-0 shadow-lg"
+                className={`overflow-hidden hover:shadow-2xl transition-all duration-300 border-0 shadow-lg ${
+                  index % 2 === 1 ? "bg-gray-50" : "bg-white"
+                }`}
               >
-                <div className={`grid lg:grid-cols-2 gap-0 ${index % 2 === 1 ? "lg:grid-flow-col-dense" : ""}`}>
-                  <div className={`relative ${index % 2 === 1 ? "lg:col-start-2" : ""}`}>
+                <div className={`grid lg:grid-cols-3 gap-0 ${index % 2 === 1 ? "lg:grid-cols-3" : ""}`}>
+                  <div className={`relative ${index % 2 === 1 ? "lg:order-2" : ""}`}>
                     <Image
                       src={member.image || "/placeholder.svg"}
                       alt={member.name}
-                      width={600}
-                      height={600}
-                      className="w-full h-64 lg:h-full object-cover"
+                      width={400}
+                      height={500}
+                      className="w-full h-80 lg:h-full object-cover"
                     />
-                    <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur-sm p-4 rounded-xl">
-                      <div className="flex items-center space-x-2 text-sm">
-                        <MapPin className="w-4 h-4 text-orange-500" />
-                        <span className="font-medium">{member.location}</span>
-                      </div>
+                    <div className="absolute top-4 left-4">
+                      <Badge className="bg-orange-500 text-white">{member.role}</Badge>
                     </div>
                   </div>
 
-                  <CardContent className={`p-8 lg:p-12 ${index % 2 === 1 ? "lg:col-start-1" : ""}`}>
+                  <CardContent className={`lg:col-span-2 p-8 ${index % 2 === 1 ? "lg:order-1" : ""}`}>
                     <div className="space-y-6">
                       <div>
-                        <h2 className="text-3xl font-bold mb-2">{member.name}</h2>
-                        <p className="text-orange-500 font-semibold text-lg mb-4">{member.role}</p>
+                        <h3 className="text-3xl font-bold mb-2">{member.name}</h3>
+                        <div className="flex items-center space-x-2 text-gray-600 mb-4">
+                          <MapPin className="w-4 h-4" />
+                          <span>{member.location}</span>
+                        </div>
                         <p className="text-gray-600 leading-relaxed">{member.bio}</p>
                       </div>
 
-                      {/* Quick Stats */}
-                      <div className="grid grid-cols-2 gap-4 py-4 border-y border-gray-100">
+                      {/* Experience & Projects */}
+                      <div className="grid md:grid-cols-2 gap-6 py-4 border-y border-gray-100">
                         <div>
-                          <p className="text-sm text-gray-500">Expérience</p>
-                          <p className="font-semibold">{member.experience}</p>
+                          <h4 className="font-semibold mb-2">Expérience</h4>
+                          <p className="text-gray-600">{member.experience}</p>
                         </div>
                         <div>
-                          <p className="text-sm text-gray-500">Projets</p>
-                          <p className="font-semibold">{member.projects}</p>
+                          <h4 className="font-semibold mb-2">Projets</h4>
+                          <p className="text-gray-600">{member.projects}</p>
                         </div>
                       </div>
 
@@ -247,19 +237,19 @@ export default function TeamPage() {
                       {/* Achievements */}
                       <div>
                         <h4 className="font-semibold mb-3">Réalisations Clés</h4>
-                        <ul className="space-y-2">
-                          {member.achievements.slice(0, 3).map((achievement, idx) => (
-                            <li key={idx} className="flex items-start space-x-2">
-                              <Award className="w-4 h-4 text-orange-500 mt-1 flex-shrink-0" />
-                              <span className="text-sm text-gray-600">{achievement}</span>
-                            </li>
+                        <div className="space-y-2">
+                          {member.achievements.map((achievement, idx) => (
+                            <div key={idx} className="flex items-start space-x-3">
+                              <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
+                              <span className="text-gray-600 text-sm">{achievement}</span>
+                            </div>
                           ))}
-                        </ul>
+                        </div>
                       </div>
 
                       {/* Education */}
-                      <div className="text-sm">
-                        <h5 className="font-medium mb-2">Formation</h5>
+                      <div>
+                        <h4 className="font-semibold mb-3">Formation</h4>
                         <p className="text-gray-600">{member.education}</p>
                       </div>
 
@@ -283,26 +273,6 @@ export default function TeamPage() {
                             className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-orange-500 hover:text-white transition-colors"
                           >
                             <Linkedin className="w-5 h-5" />
-                          </Link>
-                        )}
-                        {member.social.youtube && (
-                          <Link
-                            href={member.social.youtube}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-orange-500 hover:text-white transition-colors"
-                          >
-                            <Youtube className="w-5 h-5" />
-                          </Link>
-                        )}
-                        {member.social.instagram && (
-                          <Link
-                            href={member.social.instagram}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-orange-500 hover:text-white transition-colors"
-                          >
-                            <Instagram className="w-5 h-5" />
                           </Link>
                         )}
                         {member.social.facebook && (
@@ -335,31 +305,31 @@ export default function TeamPage() {
         </div>
       </section>
 
-      {/* Join Team CTA */}
-      <section className="py-20 bg-gradient-to-r from-orange-500 to-red-500">
+      {/* CTA Section */}
+      <section className="py-16 bg-gradient-to-r from-orange-500 to-red-500">
         <div className="container mx-auto px-4 lg:px-6 text-center">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">Rejoignez Notre Équipe</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">Rejoignez Notre Communauté</h2>
             <p className="text-xl text-orange-100 mb-8 leading-relaxed">
-              Vous partagez notre passion pour la blockchain et l'innovation en Afrique ? Nous recherchons toujours des
-              talents exceptionnels pour renforcer notre équipe.
+              Connectez-vous avec notre équipe et la communauté blockchain francophone. Ensemble, construisons l'avenir
+              de la blockchain en Afrique.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white text-orange-500 hover:bg-orange-50 font-semibold">
-                Voir les Opportunités
-                <ExternalLink className="w-4 h-4 ml-2" />
-              </Button>
+              <Link href="https://www.youtube.com/@techblockchainaf" target="_blank" rel="noopener noreferrer">
+                <Button className="bg-white text-orange-500 hover:bg-orange-50 font-semibold px-8">
+                  Écouter le Podcast
+                </Button>
+              </Link>
               <Link
                 href="https://whatsapp.com/channel/0029Vao6uuXDuMRXaIQPqb16"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <Button
-                  size="lg"
                   variant="outline"
-                  className="border-white text-white hover:bg-white hover:text-orange-500 w-full bg-transparent"
+                  className="border-white text-white hover:bg-white hover:text-orange-500 bg-transparent"
                 >
-                  Nous Contacter
+                  Rejoindre WhatsApp
                 </Button>
               </Link>
             </div>
