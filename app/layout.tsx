@@ -2,9 +2,9 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'techblockchainafr',
-  description: 'Created by Blockchain Francophone Builder',
-  generator: 'SharpMindset❤️',
+  title: 'v0 App',
+  description: 'Created with v0',
+  generator: 'v0.dev',
 }
 
 export default function RootLayout({
