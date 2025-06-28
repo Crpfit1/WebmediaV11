@@ -1,8 +1,11 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { MobileMenu } from "@/components/mobile-menu"
+import { NewsletterForm } from "@/components/newsletter-form"
 import {
   Play,
   Users,
@@ -290,10 +293,16 @@ export default function HomePage() {
                   Première compétition de trading crypto en Afrique. Éducation financière et sensibilisation aux
                   opportunités du trading.
                 </p>
-                <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white">
-                  En savoir plus
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Button>
+                <Link
+                  href="https://www.eventbrite.com/e/africa-trading-cup-2025-tickets-1417808275719"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white">
+                    S'inscrire sur Eventbrite
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
 
@@ -323,10 +332,12 @@ export default function HomePage() {
                   Construire, connecter et innover sur Stellar. Workshop pratique sur l'écosystème Stellar et les smart
                   contracts Soroban.
                 </p>
-                <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white">
-                  S'inscrire
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Button>
+                <Link href="https://lu.ma/7h45yfc9" target="_blank" rel="noopener noreferrer">
+                  <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white">
+                    S'inscrire sur Luma
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
 
@@ -356,10 +367,16 @@ export default function HomePage() {
                   Célébrons ensemble les 10 ans d'Ethereum en Côte d'Ivoire. Présentations, networking et
                   rafraîchissements offerts.
                 </p>
-                <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white">
-                  Participer
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Button>
+                <Link
+                  href="https://app.unlock-protocol.com/event/meetup-les-10-ans-d-anniversaire-d-ethereum"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white">
+                    Réserver sa place
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
           </div>
@@ -379,8 +396,93 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Latest Episodes */}
+      {/* Partners Section */}
+      <section className="py-16 bg-white border-t border-gray-100">
+        <div className="container mx-auto px-4 lg:px-6">
+          <div className="text-center mb-12">
+            <Badge className="bg-blue-100 text-blue-700 hover:bg-blue-100 mb-4">🤝 Nos Partenaires</Badge>
+            <h2 className="text-2xl lg:text-3xl font-bold mb-4">
+              Ils Nous Font <span className="text-orange-500">Confiance</span>
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Découvrez les organisations qui soutiennent notre mission de démocratisation de la blockchain en Afrique
+              francophone.
+            </p>
+          </div>
+
+          {/* Auto-sliding Partners */}
+          <div className="relative overflow-hidden">
+            <div className="flex animate-slide-left">
+              {/* First set of partners */}
+              <div className="flex items-center justify-center min-w-[300px] px-8">
+                <Image
+                  src="/images/africa-web3-academy.png"
+                  alt="Africa Web3 Academy"
+                  width={200}
+                  height={120}
+                  className="object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                />
+              </div>
+              <div className="flex items-center justify-center min-w-[300px] px-8">
+                <Image
+                  src="/images/bit-trading-edu.png"
+                  alt="Bit Trading Edu"
+                  width={200}
+                  height={120}
+                  className="object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                />
+              </div>
+              <div className="flex items-center justify-center min-w-[300px] px-8">
+                <Image
+                  src="/images/jelisvoscv-com.jpeg"
+                  alt="Jelisvoscv.com"
+                  width={200}
+                  height={120}
+                  className="object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                />
+              </div>
+              {/* Duplicate set for seamless loop */}
+              <div className="flex items-center justify-center min-w-[300px] px-8">
+                <Image
+                  src="/images/africa-web3-academy.png"
+                  alt="Africa Web3 Academy"
+                  width={200}
+                  height={120}
+                  className="object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                />
+              </div>
+              <div className="flex items-center justify-center min-w-[300px] px-8">
+                <Image
+                  src="/images/bit-trading-edu.png"
+                  alt="Bit Trading Edu"
+                  width={200}
+                  height={120}
+                  className="object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                />
+              </div>
+              <div className="flex items-center justify-center min-w-[300px] px-8">
+                <Image
+                  src="/images/jelisvoscv-com.jpeg"
+                  alt="Jelisvoscv.com"
+                  width={200}
+                  height={120}
+                  className="object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Newsletter Section */}
       <section className="py-20 lg:py-32">
+        <div className="container mx-auto px-4 lg:px-6">
+          <NewsletterForm variant="inline" />
+        </div>
+      </section>
+
+      {/* Latest Episodes */}
+      <section className="py-20 lg:py-32 bg-gray-50">
         <div className="container mx-auto px-4 lg:px-6">
           <div className="text-center mb-16">
             <Badge className="bg-purple-100 text-purple-700 hover:bg-purple-100 mb-4">🎧 Derniers Épisodes</Badge>
@@ -492,7 +594,7 @@ export default function HomePage() {
       </section>
 
       {/* Team Preview */}
-      <section className="py-20 lg:py-32 bg-gray-50">
+      <section className="py-20 lg:py-32">
         <div className="container mx-auto px-4 lg:px-6">
           <div className="text-center mb-16">
             <Badge className="bg-blue-100 text-blue-700 hover:bg-blue-100 mb-4">👥 Notre Équipe</Badge>
@@ -559,45 +661,6 @@ export default function HomePage() {
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
             </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 lg:py-32 bg-gradient-to-r from-orange-500 to-red-500">
-        <div className="container mx-auto px-4 lg:px-6 text-center">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl lg:text-5xl font-bold text-white mb-6">
-              Rejoignez la Révolution Blockchain en Afrique
-            </h2>
-            <p className="text-xl text-orange-100 mb-8 leading-relaxed">
-              Ne manquez aucun épisode de notre podcast et restez informé des dernières actualités blockchain en Afrique
-              francophone. Abonnez-vous dès maintenant !
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-              <Link href="https://www.youtube.com/@techblockchainaf" target="_blank" rel="noopener noreferrer">
-                <Button size="lg" className="bg-white text-orange-500 hover:bg-orange-50 font-semibold">
-                  <Youtube className="w-5 h-5 mr-2" />
-                  S'abonner sur YouTube
-                </Button>
-              </Link>
-              <Link
-                href="https://whatsapp.com/channel/0029Vao6uuXDuMRXaIQPqb16"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-white text-white hover:bg-white hover:text-orange-500 bg-transparent"
-                >
-                  Rejoindre WhatsApp
-                </Button>
-              </Link>
-            </div>
-
-            <p className="text-orange-200 text-sm">Plus de 10K auditeurs nous font déjà confiance</p>
           </div>
         </div>
       </section>
@@ -806,6 +869,23 @@ export default function HomePage() {
           </div>
         </div>
       </footer>
+
+      <style jsx>{`
+        @keyframes slide-left {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+        .animate-slide-left {
+          animation: slide-left 20s linear infinite;
+        }
+        .animate-slide-left:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
     </div>
   )
 }

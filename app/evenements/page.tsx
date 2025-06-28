@@ -1,15 +1,17 @@
+"use client"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { MobileMenu } from "@/components/mobile-menu"
+import { NewsletterForm } from "@/components/newsletter-form"
 import {
   Calendar,
   MapPin,
   Users,
+  Clock,
   ExternalLink,
-  Ticket,
-  Video,
-  ImageIcon,
+  ArrowRight,
   Twitter,
   Youtube,
   Linkedin,
@@ -19,138 +21,8 @@ import {
 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
-import { MobileMenu } from "@/components/mobile-menu"
 
-export default function EventsPage() {
-  const upcomingEvents = [
-    {
-      id: 1,
-      title: "Africa Trading Cup 2025",
-      description:
-        "Promouvoir l'éducation financière et sensibiliser aux opportunités et aux risques liés au trading et à l'investissement boursier.",
-      date: "04 Juillet 2025",
-      location: "Seen Hôtel, Plateau",
-      city: "Côte d'Ivoire",
-      type: "Conférence, Atelier",
-      status: "Inscriptions Ouvertes",
-      attendees: "150+ participants attendus",
-      price: "Gratuit",
-      image: "/images/africa-trading-cup-logo.jpeg",
-      highlights: ["5+ speakers attendus", "+5 thématiques: Trading, Psychologie, Crypto, Blockchain", "Networking"],
-      speakers: ["Ayémou Loïc", "Serge Aboua", "+Invités Spéciaux"],
-    },
-    {
-      id: 2,
-      title: "Stellar Meetup Abidjan",
-      description: "Conférence, Ateliers et Exposition de Projets VR + GameFi & NFTs",
-      date: "19 Juillet 2025",
-      location: "Abidjan, Riviera",
-      city: "Côte D'Ivoire",
-      type: "Workshop",
-      status: "Places Limitées",
-      attendees: "50 participants max",
-      price: "0 FCFA",
-      image: "/images/stellar-meetup-abidjan.jpeg",
-      highlights: [
-        "Découvrir l'écosystème de Stellar",
-        "Construire son projet sur Stellar",
-        "Débuter avec RUST",
-        "Structure du Smart Contract Soroban",
-      ],
-      speakers: ["Ayémou Loïc", "Patrick Yeboue", "Souleymane Ouattara"],
-    },
-    {
-      id: 3,
-      title: "Meetup: 10 Ans d'Anniversaire de Ethereum",
-      description: "Venez célébrer les 10 ans d'anniversaire de Ethereum à Abidjan",
-      date: "30 Juillet 2025",
-      time: "10:00 - 14:00",
-      location: "Abidjan Riviera",
-      city: "Abidjan, Côte D'Ivoire",
-      type: "Meetup",
-      status: "Inscription Gratuite",
-      attendees: "50+ participants",
-      price: "Gratuit",
-      image: "/images/ethereum-10-years-cote-divoire.png",
-      highlights: ["Présentation d'Ethereum", "Session Q&A", "Networking informel", "Rafraîchissements offerts"],
-      speakers: ["Souleymane Ouattara", "Ayémou Loïc", "Patrick Yeboue"],
-    },
-  ]
-
-  const pastEvents = [
-    {
-      id: 4,
-      title: "Afro Web3 Babi 2024",
-      description:
-        "Découvrez les opportunités des nouvelles technologies et entamez un voyage dans l'univers incroyable de la blockchain et du Web3.",
-      date: "13 Juillet 2024",
-      location: "Online",
-      city: "Abidjan, Côte d'Ivoire",
-      cities: "Côte d'Ivoire, Benin, Cameroun, Burkina Faso, France",
-      type: "Conférence",
-      attendees: "100+ participants",
-      image: "/images/afro-web3-cover.png",
-      highlights: ["+20 speakers", "100+ participants", "10 pays représentés", "10+ startups participantes"],
-      resources: {
-        photos: true,
-        videos: true,
-        presentations: true,
-      },
-    },
-    {
-      id: 5,
-      title: "GameFi & NFTs Conference",
-      description: "Conférence, Ateliers et Exposition de Projets VR + GameFi & NFTs",
-      date: "Octobre 2024",
-      location: "Belle Côte",
-      city: "Abidjan, Côte d'Ivoire",
-      type: "Meetup",
-      attendees: "30+ participants",
-      image: "/images/gamefi-nfts-announce.png",
-      highlights: ["Panel sur la crypto et des NFTs", "Panel sur la GameFi", "Exposition VR", "Couverture média"],
-      resources: {
-        photos: true,
-        videos: true,
-        presentations: false,
-      },
-    },
-    {
-      id: 6,
-      title: "DeFi Workshop Casablanca",
-      description:
-        "Formation intensive sur la finance décentralisée avec des cas d'usage pratiques pour l'Afrique du Nord.",
-      date: "10 Février 2024",
-      location: "Mohammed VI Polytechnic University",
-      city: "Casablanca, Maroc",
-      type: "Workshop",
-      attendees: "60+ participants",
-      image: "/placeholder.svg?height=300&width=400",
-      highlights: ["Formation pratique 4h", "Cas d'usage locaux", "Certificats délivrés", "Suivi personnalisé"],
-      resources: {
-        photos: true,
-        videos: false,
-        presentations: true,
-      },
-    },
-    {
-      id: 7,
-      title: "Web3 & Entrepreneuriat - Bamako",
-      description: "Conférence sur les opportunités entrepreneuriales dans l'écosystème Web3 au Mali.",
-      date: "5 Décembre 2023",
-      location: "Azalaï Hotel Bamako",
-      city: "Bamako, Mali",
-      type: "Conférence",
-      attendees: "200+ participants",
-      image: "/placeholder.svg?height=300&width=400",
-      highlights: ["Focus entrepreneuriat", "Pitch de startups", "Investisseurs présents", "Partenariats signés"],
-      resources: {
-        photos: true,
-        videos: true,
-        presentations: true,
-      },
-    },
-  ]
-
+export default function EvenementsPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
@@ -199,332 +71,464 @@ export default function EventsPage() {
         </div>
       </header>
 
-      {/* Events Hero */}
-      <section className="py-16 lg:py-24 bg-gradient-to-br from-gray-50 to-orange-50">
+      {/* Hero Section */}
+      <section className="py-20 lg:py-32 bg-gradient-to-br from-orange-50 to-red-50">
         <div className="container mx-auto px-4 lg:px-6">
-          <div className="text-center mb-12">
-            <Badge className="bg-orange-100 text-orange-700 hover:bg-orange-100 mb-4">🎪 Nos Événements</Badge>
-            <h1 className="text-4xl lg:text-6xl font-bold mb-6">
-              Événements <span className="text-orange-500">Blockchain</span>
+          <div className="text-center max-w-4xl mx-auto">
+            <Badge className="bg-orange-100 text-orange-700 hover:bg-orange-100 mb-6">
+              📅 Événements TechBlockchainAfr
+            </Badge>
+            <h1 className="text-4xl lg:text-6xl font-bold leading-tight mb-6">
+              Nos <span className="text-orange-500">Événements</span> Blockchain
             </h1>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Rejoignez-nous lors de nos conférences, workshops et meetups à travers l'Afrique francophone. Des
-              événements qui rassemblent la communauté blockchain pour apprendre, échanger et innover ensemble.
+            <p className="text-xl text-gray-600 leading-relaxed mb-8">
+              Découvrez tous nos événements passés et à venir : conférences, meetups, workshops et formations blockchain
+              à travers l'Afrique francophone.
             </p>
-          </div>
 
-          {/* Event Stats */}
-          <div className="grid md:grid-cols-4 gap-8 max-w-4xl mx-auto">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Calendar className="w-8 h-8 text-orange-500" />
+            {/* Stats */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-2xl mx-auto">
+              <div className="text-center">
+                <div className="text-3xl font-bold text-orange-500">15+</div>
+                <div className="text-sm text-gray-600">Événements Organisés</div>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900">15+</h3>
-              <p className="text-gray-600">Événements Organisés</p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Users className="w-8 h-8 text-green-500" />
+              <div className="text-center">
+                <div className="text-3xl font-bold text-orange-500">250+</div>
+                <div className="text-sm text-gray-600">Participants Total</div>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900">250+</h3>
-              <p className="text-gray-600">Participants Total</p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <MapPin className="w-8 h-8 text-purple-500" />
+              <div className="text-center">
+                <div className="text-3xl font-bold text-orange-500">3</div>
+                <div className="text-sm text-gray-600">Villes Visitées</div>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900">3</h3>
-              <p className="text-gray-600">Villes Visitées</p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-red-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Ticket className="w-8 h-8 text-red-500" />
+              <div className="text-center">
+                <div className="text-3xl font-bold text-orange-500">50+</div>
+                <div className="text-sm text-gray-600">Speakers Invités</div>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900">3</h3>
-              <p className="text-gray-600">Événements à Venir</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Events Tabs */}
-      <section className="py-20">
+      {/* Events Tabs Section */}
+      <section className="py-20 lg:py-32">
         <div className="container mx-auto px-4 lg:px-6">
-          <Tabs defaultValue="upcoming" className="w-full">
+          <Tabs defaultValue="a-venir" className="w-full">
             <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-12">
-              <TabsTrigger value="upcoming" className="text-lg">
+              <TabsTrigger value="a-venir" className="text-lg">
                 À Venir
               </TabsTrigger>
-              <TabsTrigger value="archived" className="text-lg">
+              <TabsTrigger value="archives" className="text-lg">
                 Archivés
               </TabsTrigger>
             </TabsList>
 
             {/* Upcoming Events */}
-            <TabsContent value="upcoming" className="space-y-8">
+            <TabsContent value="a-venir" className="space-y-8">
               <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold mb-4">Événements à Venir</h2>
-                <p className="text-gray-600 text-lg">
+                <h2 className="text-3xl lg:text-4xl font-bold mb-4">
+                  Événements <span className="text-orange-500">à Venir</span>
+                </h2>
+                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                   Découvrez nos prochains événements et réservez votre place dès maintenant.
                 </p>
               </div>
 
-              <div className="grid lg:grid-cols-1 gap-8">
-                {upcomingEvents.map((event) => (
-                  <Card
-                    key={event.id}
-                    className="overflow-hidden hover:shadow-2xl transition-all duration-300 border-0 shadow-lg"
-                  >
-                    <div className="grid lg:grid-cols-3 gap-0">
-                      <div className="relative">
-                        <Image
-                          src={event.image || "/placeholder.svg"}
-                          alt={event.title}
-                          width={400}
-                          height={300}
-                          className="w-full h-64 lg:h-full object-cover"
-                        />
-                        <div className="absolute top-4 left-4">
-                          <Badge
-                            className={`${
-                              event.type === "Conférence, Atelier"
-                                ? "bg-orange-500"
-                                : event.type === "Workshop"
-                                  ? "bg-purple-500"
-                                  : "bg-green-500"
-                            } text-white`}
-                          >
-                            {event.type}
-                          </Badge>
-                        </div>
-                        <div className="absolute top-4 right-4">
-                          <Badge
-                            className={`${
-                              event.status === "Inscriptions Ouvertes"
-                                ? "bg-green-500"
-                                : event.status === "Places Limitées"
-                                  ? "bg-red-500"
-                                  : "bg-blue-500"
-                            } text-white`}
-                          >
-                            {event.status}
-                          </Badge>
-                        </div>
-                      </div>
-
-                      <CardContent className="lg:col-span-2 p-8">
-                        <div className="space-y-6">
-                          <div>
-                            <h3 className="text-2xl font-bold mb-3">{event.title}</h3>
-                            <p className="text-gray-600 leading-relaxed">{event.description}</p>
-                          </div>
-
-                          {/* Event Details */}
-                          <div className="grid md:grid-cols-2 gap-4 py-4 border-y border-gray-100">
-                            <div className="space-y-3">
-                              <div className="flex items-center space-x-3">
-                                <Calendar className="w-5 h-5 text-orange-500" />
-                                <div>
-                                  <p className="font-medium">{event.date}</p>
-                                  <p className="text-sm text-gray-500">{event.time}</p>
-                                </div>
-                              </div>
-                              <div className="flex items-center space-x-3">
-                                <MapPin className="w-5 h-5 text-orange-500" />
-                                <div>
-                                  <p className="font-medium">{event.location}</p>
-                                  <p className="text-sm text-gray-500">{event.city}</p>
-                                </div>
-                              </div>
-                            </div>
-                            <div className="space-y-3">
-                              <div className="flex items-center space-x-3">
-                                <Users className="w-5 h-5 text-orange-500" />
-                                <p className="font-medium">{event.attendees}</p>
-                              </div>
-                              <div className="flex items-center space-x-3">
-                                <Ticket className="w-5 h-5 text-orange-500" />
-                                <p className="font-medium">{event.price}</p>
-                              </div>
-                            </div>
-                          </div>
-
-                          {/* Highlights */}
-                          <div>
-                            <h4 className="font-semibold mb-3">Points Forts</h4>
-                            <div className="grid md:grid-cols-2 gap-2">
-                              {event.highlights.map((highlight, idx) => (
-                                <div key={idx} className="flex items-center space-x-2">
-                                  <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
-                                  <span className="text-sm text-gray-600">{highlight}</span>
-                                </div>
-                              ))}
-                            </div>
-                          </div>
-
-                          {/* Speakers */}
-                          <div>
-                            <h4 className="font-semibold mb-3">Intervenants</h4>
-                            <div className="flex flex-wrap gap-2">
-                              {event.speakers.map((speaker) => (
-                                <Badge key={speaker} variant="outline" className="border-orange-200 text-orange-700">
-                                  {speaker}
-                                </Badge>
-                              ))}
-                            </div>
-                          </div>
-
-                          {/* Action Buttons */}
-                          <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                            <Button className="bg-orange-500 hover:bg-orange-600 text-white flex-1">
-                              S'inscrire Maintenant
-                              <ExternalLink className="w-4 h-4 ml-2" />
-                            </Button>
-                            <Button
-                              variant="outline"
-                              className="border-orange-500 text-orange-500 hover:bg-orange-50 bg-transparent"
-                            >
-                              Plus d'Infos
-                            </Button>
-                          </div>
-                        </div>
-                      </CardContent>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {/* Africa Trading Cup */}
+                <Card className="group overflow-hidden hover:shadow-xl transition-all duration-300">
+                  <div className="relative">
+                    <div className="w-full h-48 bg-gradient-to-br from-green-400 to-blue-500 flex items-center justify-center">
+                      <Image
+                        src="/images/africa-trading-cup-logo.jpeg"
+                        alt="Africa Trading Cup 2025"
+                        width={120}
+                        height={120}
+                        className="object-contain"
+                      />
                     </div>
-                  </Card>
-                ))}
+                    <div className="absolute top-4 left-4">
+                      <Badge className="bg-green-500 text-white">Compétition</Badge>
+                    </div>
+                    <div className="absolute top-4 right-4">
+                      <Badge variant="outline" className="bg-white text-green-600 border-green-600">
+                        Gratuit
+                      </Badge>
+                    </div>
+                  </div>
+                  <CardContent className="p-6">
+                    <div className="flex items-center text-sm text-gray-500 mb-3">
+                      <Calendar className="w-4 h-4 mr-2" />
+                      04 Juillet 2025
+                      <Clock className="w-4 h-4 ml-4 mr-2" />
+                      09:00 - 18:00
+                    </div>
+                    <div className="flex items-center text-sm text-gray-500 mb-4">
+                      <MapPin className="w-4 h-4 mr-2" />
+                      Abidjan, Côte d'Ivoire
+                      <Users className="w-4 h-4 ml-4 mr-2" />
+                      100+ participants
+                    </div>
+                    <h3 className="text-xl font-bold mb-3">Africa Trading Cup 2025</h3>
+                    <p className="text-gray-600 mb-4">
+                      Première compétition de trading crypto en Afrique. Éducation financière, sensibilisation aux
+                      opportunités du trading et prix à gagner.
+                    </p>
+                    <div className="space-y-2 mb-4">
+                      <div className="flex items-center text-sm text-gray-600">
+                        <span className="w-2 h-2 bg-orange-500 rounded-full mr-2"></span>
+                        Workshops de trading
+                      </div>
+                      <div className="flex items-center text-sm text-gray-600">
+                        <span className="w-2 h-2 bg-orange-500 rounded-full mr-2"></span>
+                        Compétition en temps réel
+                      </div>
+                      <div className="flex items-center text-sm text-gray-600">
+                        <span className="w-2 h-2 bg-orange-500 rounded-full mr-2"></span>
+                        Prix et récompenses
+                      </div>
+                    </div>
+                    <Link
+                      href="https://www.eventbrite.com/e/africa-trading-cup-2025-tickets-1417808275719"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white">
+                        S'inscrire sur Eventbrite
+                        <ExternalLink className="w-4 h-4 ml-2" />
+                      </Button>
+                    </Link>
+                  </CardContent>
+                </Card>
+
+                {/* Stellar Meetup Abidjan */}
+                <Card className="group overflow-hidden hover:shadow-xl transition-all duration-300">
+                  <div className="relative">
+                    <Image
+                      src="/images/stellar-meetup-abidjan.jpeg"
+                      alt="Stellar Meetup Abidjan N°2"
+                      width={400}
+                      height={300}
+                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div className="absolute top-4 left-4">
+                      <Badge className="bg-yellow-500 text-white">Meetup</Badge>
+                    </div>
+                    <div className="absolute top-4 right-4">
+                      <Badge variant="outline" className="bg-white text-yellow-600 border-yellow-600">
+                        Gratuit
+                      </Badge>
+                    </div>
+                  </div>
+                  <CardContent className="p-6">
+                    <div className="flex items-center text-sm text-gray-500 mb-3">
+                      <Calendar className="w-4 h-4 mr-2" />
+                      19 Juillet 2025
+                      <Clock className="w-4 h-4 ml-4 mr-2" />
+                      14:00 - 18:00
+                    </div>
+                    <div className="flex items-center text-sm text-gray-500 mb-4">
+                      <MapPin className="w-4 h-4 mr-2" />
+                      Abidjan, Riviera
+                      <Users className="w-4 h-4 ml-4 mr-2" />
+                      50+ participants
+                    </div>
+                    <h3 className="text-xl font-bold mb-3">Stellar Meetup Abidjan N°2</h3>
+                    <p className="text-gray-600 mb-4">
+                      Construire, connecter et innover sur Stellar. Workshop pratique sur l'écosystème Stellar et les
+                      smart contracts Soroban.
+                    </p>
+                    <div className="space-y-2 mb-4">
+                      <div className="flex items-center text-sm text-gray-600">
+                        <span className="w-2 h-2 bg-orange-500 rounded-full mr-2"></span>
+                        Introduction à Stellar
+                      </div>
+                      <div className="flex items-center text-sm text-gray-600">
+                        <span className="w-2 h-2 bg-orange-500 rounded-full mr-2"></span>
+                        Smart contracts Soroban
+                      </div>
+                      <div className="flex items-center text-sm text-gray-600">
+                        <span className="w-2 h-2 bg-orange-500 rounded-full mr-2"></span>
+                        Networking & refreshments
+                      </div>
+                    </div>
+                    <Link href="https://lu.ma/7h45yfc9" target="_blank" rel="noopener noreferrer">
+                      <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white">
+                        S'inscrire sur Luma
+                        <ExternalLink className="w-4 h-4 ml-2" />
+                      </Button>
+                    </Link>
+                  </CardContent>
+                </Card>
+
+                {/* 10 Years of Ethereum */}
+                <Card className="group overflow-hidden hover:shadow-xl transition-all duration-300">
+                  <div className="relative">
+                    <Image
+                      src="/images/ethereum-10-years-cote-divoire.png"
+                      alt="10 Ans d'Anniversaire de Ethereum"
+                      width={400}
+                      height={300}
+                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div className="absolute top-4 left-4">
+                      <Badge className="bg-blue-500 text-white">Anniversaire</Badge>
+                    </div>
+                    <div className="absolute top-4 right-4">
+                      <Badge variant="outline" className="bg-white text-blue-600 border-blue-600">
+                        Gratuit
+                      </Badge>
+                    </div>
+                  </div>
+                  <CardContent className="p-6">
+                    <div className="flex items-center text-sm text-gray-500 mb-3">
+                      <Calendar className="w-4 h-4 mr-2" />
+                      30 Juillet 2025
+                      <Clock className="w-4 h-4 ml-4 mr-2" />
+                      10:00 - 14:00
+                    </div>
+                    <div className="flex items-center text-sm text-gray-500 mb-4">
+                      <MapPin className="w-4 h-4 mr-2" />
+                      Abidjan, Riviera
+                      <Users className="w-4 h-4 ml-4 mr-2" />
+                      80+ participants
+                    </div>
+                    <h3 className="text-xl font-bold mb-3">10 Ans d'Anniversaire de Ethereum</h3>
+                    <p className="text-gray-600 mb-4">
+                      Célébrons ensemble les 10 ans d'Ethereum en Côte d'Ivoire. Présentations, networking et
+                      rafraîchissements offerts.
+                    </p>
+                    <div className="space-y-2 mb-4">
+                      <div className="flex items-center text-sm text-gray-600">
+                        <span className="w-2 h-2 bg-orange-500 rounded-full mr-2"></span>
+                        Histoire d'Ethereum
+                      </div>
+                      <div className="flex items-center text-sm text-gray-600">
+                        <span className="w-2 h-2 bg-orange-500 rounded-full mr-2"></span>
+                        Écosystème DeFi
+                      </div>
+                      <div className="flex items-center text-sm text-gray-600">
+                        <span className="w-2 h-2 bg-orange-500 rounded-full mr-2"></span>
+                        Networking & gâteau
+                      </div>
+                    </div>
+                    <Link
+                      href="https://app.unlock-protocol.com/event/meetup-les-10-ans-d-anniversaire-d-ethereum"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white">
+                        Réserver sa place
+                        <ExternalLink className="w-4 h-4 ml-2" />
+                      </Button>
+                    </Link>
+                  </CardContent>
+                </Card>
               </div>
             </TabsContent>
 
             {/* Archived Events */}
-            <TabsContent value="archived" className="space-y-8">
+            <TabsContent value="archives" className="space-y-8">
               <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold mb-4">Événements Archivés</h2>
-                <p className="text-gray-600 text-lg">
-                  Revivez nos événements passés et accédez aux ressources disponibles.
+                <h2 className="text-3xl lg:text-4xl font-bold mb-4">
+                  Événements <span className="text-orange-500">Archivés</span>
+                </h2>
+                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                  Revivez nos événements passés et découvrez les moments forts de notre communauté.
                 </p>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-8">
-                {pastEvents.map((event) => (
-                  <Card
-                    key={event.id}
-                    className="group overflow-hidden hover:shadow-xl transition-all duration-300 bg-white"
-                  >
-                    <div className="relative">
-                      <Image
-                        src={event.image || "/placeholder.svg"}
-                        alt={event.title}
-                        width={400}
-                        height={300}
-                        className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
-                      <div className="absolute top-4 left-4">
-                        <Badge
-                          className={`${
-                            event.type === "Conférence"
-                              ? "bg-orange-500"
-                              : event.type === "Workshop"
-                                ? "bg-purple-500"
-                                : "bg-green-500"
-                          } text-white`}
-                        >
-                          {event.type}
-                        </Badge>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {/* Afro Web3 Babi 2024 */}
+                <Card className="group overflow-hidden hover:shadow-xl transition-all duration-300">
+                  <div className="relative">
+                    <Image
+                      src="/images/afro-web3-cover.png"
+                      alt="Afro Web3 Babi 2024"
+                      width={400}
+                      height={300}
+                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div className="absolute top-4 left-4">
+                      <Badge className="bg-purple-500 text-white">Conférence</Badge>
+                    </div>
+                    <div className="absolute top-4 right-4">
+                      <Badge variant="outline" className="bg-white text-gray-600 border-gray-600">
+                        Terminé
+                      </Badge>
+                    </div>
+                  </div>
+                  <CardContent className="p-6">
+                    <div className="flex items-center text-sm text-gray-500 mb-3">
+                      <Calendar className="w-4 h-4 mr-2" />
+                      15 Décembre 2024
+                      <Clock className="w-4 h-4 ml-4 mr-2" />
+                      09:00 - 17:00
+                    </div>
+                    <div className="flex items-center text-sm text-gray-500 mb-4">
+                      <MapPin className="w-4 h-4 mr-2" />
+                      Abidjan, Côte d'Ivoire
+                      <Users className="w-4 h-4 ml-4 mr-2" />
+                      200+ participants
+                    </div>
+                    <h3 className="text-xl font-bold mb-3">Afro Web3 Babi 2024</h3>
+                    <p className="text-gray-600 mb-4">
+                      La plus grande conférence Web3 d'Afrique de l'Ouest. Speakers internationaux, workshops et
+                      networking exceptionnel.
+                    </p>
+                    <div className="space-y-2 mb-4">
+                      <div className="flex items-center text-sm text-gray-600">
+                        <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                        15 speakers internationaux
                       </div>
-                      <div className="absolute top-4 right-4">
-                        <Badge className="bg-gray-500 text-white">Terminé</Badge>
+                      <div className="flex items-center text-sm text-gray-600">
+                        <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>8 workshops pratiques
+                      </div>
+                      <div className="flex items-center text-sm text-gray-600">
+                        <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                        200+ participants
                       </div>
                     </div>
+                    <Button
+                      variant="outline"
+                      className="w-full border-orange-500 text-orange-500 hover:bg-orange-50 bg-transparent"
+                    >
+                      Voir les Highlights
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </Button>
+                  </CardContent>
+                </Card>
 
-                    <CardContent className="p-6">
-                      <div className="space-y-4">
-                        <div>
-                          <h3 className="text-xl font-bold mb-2 group-hover:text-orange-500 transition-colors">
-                            {event.title}
-                          </h3>
-                          <p className="text-gray-600 text-sm line-clamp-3">{event.description}</p>
-                        </div>
-
-                        {/* Event Info */}
-                        <div className="space-y-2 text-sm">
-                          <div className="flex items-center space-x-2">
-                            <Calendar className="w-4 h-4 text-orange-500" />
-                            <span>{event.date}</span>
-                          </div>
-                          <div className="flex items-center space-x-2">
-                            <MapPin className="w-4 h-4 text-orange-500" />
-                            <span>{event.city}</span>
-                          </div>
-                          <div className="flex items-center space-x-2">
-                            <Users className="w-4 h-4 text-orange-500" />
-                            <span>{event.attendees}</span>
-                          </div>
-                        </div>
-
-                        {/* Highlights */}
-                        <div>
-                          <h4 className="font-semibold mb-2 text-sm">Résultats</h4>
-                          <div className="space-y-1">
-                            {event.highlights.slice(0, 3).map((highlight, idx) => (
-                              <div key={idx} className="flex items-center space-x-2">
-                                <div className="w-1.5 h-1.5 bg-orange-500 rounded-full"></div>
-                                <span className="text-xs text-gray-600">{highlight}</span>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-
-                        {/* Resources */}
-                        <div className="border-t pt-4">
-                          <h4 className="font-semibold mb-3 text-sm">Ressources Disponibles</h4>
-                          <div className="flex space-x-4">
-                            {event.resources.photos && (
-                              <Button size="sm" variant="outline" className="text-xs bg-transparent">
-                                <ImageIcon className="w-3 h-3 mr-1" />
-                                Photos
-                              </Button>
-                            )}
-                            {event.resources.videos && (
-                              <Button size="sm" variant="outline" className="text-xs bg-transparent">
-                                <Video className="w-3 h-3 mr-1" />
-                                Vidéos
-                              </Button>
-                            )}
-                            {event.resources.presentations && (
-                              <Button size="sm" variant="outline" className="text-xs bg-transparent">
-                                <ExternalLink className="w-3 h-3 mr-1" />
-                                Slides
-                              </Button>
-                            )}
-                          </div>
-                        </div>
+                {/* GameFi & NFTs Conference */}
+                <Card className="group overflow-hidden hover:shadow-xl transition-all duration-300">
+                  <div className="relative">
+                    <Image
+                      src="/images/gamefi-nfts-announce.png"
+                      alt="GameFi & NFTs Conference"
+                      width={400}
+                      height={300}
+                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div className="absolute top-4 left-4">
+                      <Badge className="bg-pink-500 text-white">Workshop</Badge>
+                    </div>
+                    <div className="absolute top-4 right-4">
+                      <Badge variant="outline" className="bg-white text-gray-600 border-gray-600">
+                        Terminé
+                      </Badge>
+                    </div>
+                  </div>
+                  <CardContent className="p-6">
+                    <div className="flex items-center text-sm text-gray-500 mb-3">
+                      <Calendar className="w-4 h-4 mr-2" />
+                      20 Octobre 2024
+                      <Clock className="w-4 h-4 ml-4 mr-2" />
+                      14:00 - 18:00
+                    </div>
+                    <div className="flex items-center text-sm text-gray-500 mb-4">
+                      <MapPin className="w-4 h-4 mr-2" />
+                      Dakar, Sénégal
+                      <Users className="w-4 h-4 ml-4 mr-2" />
+                      80+ participants
+                    </div>
+                    <h3 className="text-xl font-bold mb-3">GameFi & NFTs Conference</h3>
+                    <p className="text-gray-600 mb-4">
+                      Exploration du gaming blockchain et des NFTs. Démonstrations de jeux, création de NFTs et
+                      opportunités d'investissement.
+                    </p>
+                    <div className="space-y-2 mb-4">
+                      <div className="flex items-center text-sm text-gray-600">
+                        <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                        Démonstrations de jeux
                       </div>
-                    </CardContent>
-                  </Card>
-                ))}
+                      <div className="flex items-center text-sm text-gray-600">
+                        <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                        Atelier création NFT
+                      </div>
+                      <div className="flex items-center text-sm text-gray-600">
+                        <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                        Panel investisseurs
+                      </div>
+                    </div>
+                    <Button
+                      variant="outline"
+                      className="w-full border-orange-500 text-orange-500 hover:bg-orange-50 bg-transparent"
+                    >
+                      Voir les Highlights
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </Button>
+                  </CardContent>
+                </Card>
+
+                {/* Blockchain Summit Dakar */}
+                <Card className="group overflow-hidden hover:shadow-xl transition-all duration-300">
+                  <div className="relative">
+                    <div className="w-full h-48 bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center">
+                      <div className="text-center text-white">
+                        <h4 className="text-2xl font-bold">Blockchain</h4>
+                        <p className="text-lg">Summit Dakar</p>
+                      </div>
+                    </div>
+                    <div className="absolute top-4 left-4">
+                      <Badge className="bg-blue-500 text-white">Summit</Badge>
+                    </div>
+                    <div className="absolute top-4 right-4">
+                      <Badge variant="outline" className="bg-white text-gray-600 border-gray-600">
+                        Terminé
+                      </Badge>
+                    </div>
+                  </div>
+                  <CardContent className="p-6">
+                    <div className="flex items-center text-sm text-gray-500 mb-3">
+                      <Calendar className="w-4 h-4 mr-2" />
+                      05 Septembre 2024
+                      <Clock className="w-4 h-4 ml-4 mr-2" />
+                      08:00 - 18:00
+                    </div>
+                    <div className="flex items-center text-sm text-gray-500 mb-4">
+                      <MapPin className="w-4 h-4 mr-2" />
+                      Dakar, Sénégal
+                      <Users className="w-4 h-4 ml-4 mr-2" />
+                      150+ participants
+                    </div>
+                    <h3 className="text-xl font-bold mb-3">Blockchain Summit Dakar 2024</h3>
+                    <p className="text-gray-600 mb-4">
+                      Premier sommet blockchain au Sénégal. Réglementation, adoption institutionnelle et innovation
+                      technologique au programme.
+                    </p>
+                    <div className="space-y-2 mb-4">
+                      <div className="flex items-center text-sm text-gray-600">
+                        <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                        Panel réglementation
+                      </div>
+                      <div className="flex items-center text-sm text-gray-600">
+                        <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                        Adoption institutionnelle
+                      </div>
+                      <div className="flex items-center text-sm text-gray-600">
+                        <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                        Innovation showcase
+                      </div>
+                    </div>
+                    <Button
+                      variant="outline"
+                      className="w-full border-orange-500 text-orange-500 hover:bg-orange-50 bg-transparent"
+                    >
+                      Voir les Highlights
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </Button>
+                  </CardContent>
+                </Card>
               </div>
             </TabsContent>
           </Tabs>
         </div>
       </section>
 
-      {/* Newsletter CTA */}
-      <section className="py-16 bg-gradient-to-r from-orange-500 to-red-500">
-        <div className="container mx-auto px-4 lg:px-6 text-center">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">Ne Manquez Aucun Événement</h2>
-            <p className="text-xl text-orange-100 mb-8 leading-relaxed">
-              Inscrivez-vous à notre newsletter pour être informé en priorité de nos prochains événements et recevoir
-              des invitations exclusives.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Votre adresse email"
-                className="flex-1 px-4 py-3 rounded-lg border-0 focus:ring-2 focus:ring-white/50 outline-none"
-              />
-              <Button className="bg-white text-orange-500 hover:bg-orange-50 font-semibold px-8">S'abonner</Button>
-            </div>
+      {/* Newsletter Section */}
+      <section className="py-20 lg:py-32 bg-gray-50">
+        <div className="container mx-auto px-4 lg:px-6">
+          <div className="max-w-4xl mx-auto">
+            <NewsletterForm variant="compact" />
           </div>
         </div>
       </section>
